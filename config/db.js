@@ -30,6 +30,11 @@ const init = (cloudConfig = config) => {
         db.createSchema('irs')
             .then(() => console.log('****'))
             .catch((e) => console.log('error'))
+
+        db.createSchema('wbs')
+            .then(() => console.log('****'))
+            .catch((e) => console.log('error'))
+
         addModels(db)
 
         return db
