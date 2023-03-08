@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
             avatar: DataTypes.STRING,
             password: DataTypes.STRING,
             auth_type: DataTypes.STRING,
-            access_token: DataTypes.STRING(5000),
+            access_token: DataTypes.ARRAY(DataTypes.STRING(5000)),
             role:DataTypes.STRING,
             is_deleted:{ 
                 type:DataTypes.BOOLEAN,
