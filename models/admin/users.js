@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'users',
-            schema: 'wbs',
+            schema: 'admin',
             createdAt: false,
             updatedAt: false
         });
