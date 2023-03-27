@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     Zone.init(
         {
             zone: DataTypes.STRING,
-            is_available: DataTypes.STRING
+            is_available: DataTypes.BOOLEAN
         },
         {
             sequelize,
