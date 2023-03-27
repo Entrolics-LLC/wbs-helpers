@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
             app_logo: DataTypes.STRING,
             files_url: DataTypes.STRING,
             app_url: DataTypes.STRING,
+            is_deleted: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE
             }
