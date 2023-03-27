@@ -15,6 +15,11 @@ module.exports = (sequelize, DataTypes) => {
     }
     Deployment.init(
         {
+            id: {
+                type: DataTypes.STRING,
+                primaryKey: true,
+                allowNull: false
+            },
             app_name: DataTypes.STRING,
             app_logo: DataTypes.STRING,
             files_url: DataTypes.STRING,
