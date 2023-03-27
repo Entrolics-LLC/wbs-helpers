@@ -3,7 +3,7 @@ const {
     Model, NOW
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class Zone extends Model {
+    class Region extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,17 +13,17 @@ module.exports = (sequelize, DataTypes) => {
             // define association here
         }
     }
-    Zone.init(
+    Region.init(
         {
-            zone: DataTypes.STRING,
+            region: DataTypes.STRING,
             is_available: DataTypes.STRING
         },
         {
             sequelize,
-            modelName: 'zones',
+            modelName: 'regions',
             schema: 'admin',
             createdAt: false,
             updatedAt: false
         });
-    return Zone;
+    return Region;
 };
