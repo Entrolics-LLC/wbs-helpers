@@ -20,30 +20,15 @@ module.exports = (sequelize, DataTypes) => {
                 primaryKey: true,
                 allowNull: false
             },
-            name: DataTypes.STRING,
             email: DataTypes.STRING,
-            avatar: DataTypes.STRING,
             password: DataTypes.STRING,
-            auth_type: DataTypes.STRING,
             access_token: DataTypes.ARRAY(DataTypes.STRING(5000)),
             role:DataTypes.STRING,
             is_deleted:{ 
                 type:DataTypes.BOOLEAN,
                 defaultValue: false
             },
-            is_validated:{ 
-                type:DataTypes.BOOLEAN
-            },
             created_at: {
-                type: DataTypes.DATE
-            },
-            last_login: {
-                type: DataTypes.DATE
-            },
-            curr_login: {
-                type: DataTypes.DATE
-            },
-            updated_at: {
                 type: DataTypes.DATE
             }
         },
