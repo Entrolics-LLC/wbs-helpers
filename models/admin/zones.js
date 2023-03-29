@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'zones',
-            schema: 'admin',
+            schema: 'search_app',
             createdAt: false,
             updatedAt: false
         });

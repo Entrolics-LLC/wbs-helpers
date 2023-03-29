@@ -16,7 +16,7 @@ const init = (cloudConfig = config) => {
         console.log('Connection has been established successfully.')
 
 
-        db.createSchema('admin')
+        db.createSchema('search_app')
             .then(() => console.log('****'))
             .catch((e) => console.log('error'))
 

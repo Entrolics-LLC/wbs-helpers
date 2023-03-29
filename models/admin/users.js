@@ -50,7 +50,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'users',
-            schema: 'admin',
+            schema: 'search_app',
             createdAt: false,
             updatedAt: false
         });
