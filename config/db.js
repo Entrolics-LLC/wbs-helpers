@@ -1,9 +1,10 @@
 const { Sequelize } = require('sequelize')
 const exec = require('child_process').exec
 const addModels = require('../models')
+const addDynamicModels = require('../dynamicModels')
 const config = require('./config').development
 
-const init = (cloudConfig = config) => {
+const init = (cloudConfig = config,schema = null) => {
     try {
         let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en' })
 
@@ -21,6 +22,19 @@ const init = (cloudConfig = config) => {
             .catch((e) => console.log('error'))
 
         addModels(db)
+
+        if (schema) {
+            console.log('schema')
+            try {
+                db.createSchema(schema)
+                    .then(() => console.log('new schema'))
+                    .catch((e) => console.log('error'))
+
+                addDynamicModels(db, schema)
+            }
+            catch (e) {
+            }
+        }
 
         return db
     }

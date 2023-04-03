@@ -6,7 +6,7 @@ const Sequelize = require('sequelize')
 
 var sequelizeDB = {}
 
-const addModels = (db) => {
+const addModels = (db, schema) => {
   let folders = fs.readdirSync(__dirname)
 
   folders = folders?.map(v => path.join(__dirname, v))?.filter(v => fs?.lstatSync(v)?.isDirectory())
@@ -26,7 +26,7 @@ const addModels = (db) => {
   for (var obj of files) {
     var [dbPath, fileList] = Object.entries(obj)[0]
     for (var y of fileList) {
-      var model = require(path.join(dbPath, y))(db, Sequelize.DataTypes)
+      var model = require(path.join(dbPath, y))(db, Sequelize.DataTypes, schema)
       sequelizeDB[model.name] = model
     }
   }
@@ -37,7 +37,5 @@ const addModels = (db) => {
     }
   })
 }
-
-
 
 module.exports = addModels
