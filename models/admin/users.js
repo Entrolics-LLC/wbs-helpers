@@ -1,6 +1,6 @@
 'use strict';
 const {
-    Model, NOW
+    Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
@@ -20,19 +20,25 @@ module.exports = (sequelize, DataTypes) => {
                 primaryKey: true,
                 allowNull: false
             },
-            name: DataTypes.STRING,
             email: DataTypes.STRING,
+            name: DataTypes.STRING,
+            firstName: DataTypes.STRING,
+            lastName: DataTypes.STRING,
+            title: DataTypes.STRING,
+            phone: DataTypes.STRING,
+            country: DataTypes.STRING,
+            zipCode: DataTypes.STRING,
             avatar: DataTypes.STRING,
             password: DataTypes.STRING,
             auth_type: DataTypes.STRING,
             access_token: DataTypes.ARRAY(DataTypes.STRING(5000)),
-            role:DataTypes.STRING,
-            is_deleted:{ 
-                type:DataTypes.BOOLEAN,
+            role: DataTypes.STRING,
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
-            is_validated:{ 
-                type:DataTypes.BOOLEAN
+            is_validated: {
+                type: DataTypes.BOOLEAN
             },
             created_at: {
                 type: DataTypes.DATE
