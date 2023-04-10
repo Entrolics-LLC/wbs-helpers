@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             sequelize,
             modelName: 'deployments',
-            schema: 'search_app',
+            schema: 'search_admin',
             createdAt: false,
             updatedAt: false
         });
