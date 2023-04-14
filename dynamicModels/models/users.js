@@ -1,8 +1,8 @@
 'use strict';
 const {
-    Model, NOW
+    Model
 } = require('sequelize');
-module.exports = (sequelize, DataTypes, schema) => {
+module.exports = (sequelize, DataTypes) => {
     class User extends Model {
         /**
          * Helper method for defining associations.
@@ -21,9 +21,9 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             email: DataTypes.STRING,
-            auth_type: DataTypes.STRING,
             name: DataTypes.STRING,
             first_name: DataTypes.STRING,
+            company_name: DataTypes.STRING,
             last_name: DataTypes.STRING,
             title: DataTypes.STRING,
             phone: DataTypes.STRING,
@@ -32,10 +32,13 @@ module.exports = (sequelize, DataTypes, schema) => {
             avatar: DataTypes.STRING,
             password: DataTypes.STRING,
             access_token: DataTypes.ARRAY(DataTypes.STRING(5000)),
-            role:DataTypes.STRING,
-            is_deleted:{ 
-                type:DataTypes.BOOLEAN,
+            role: DataTypes.STRING,
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
                 defaultValue: false
+            },
+            is_validated: {
+                type: DataTypes.BOOLEAN
             },
             created_at: {
                 type: DataTypes.DATE
@@ -46,9 +49,8 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_users`,
-            tableName: 'users',
-            schema: schema,
+            modelName: 'users',
+            schema: 'search_admin',
             createdAt: false,
             updatedAt: false
         });

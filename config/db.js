@@ -4,7 +4,7 @@ const addModels = require('../models')
 const addDynamicModels = require('../dynamicModels')
 const config = require('./config').development
 
-const init = (cloudConfig = config,schema = null) => {
+const init = (cloudConfig = config, schema = null) => {
     try {
         let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en' })
 
