@@ -49,8 +49,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             sequelize,
-            modelName: 'users',
-            schema: 'search_admin',
+            modelName: `${schema}_users`,
+            tableName: 'users',
+            schema: schema,
             createdAt: false,
             updatedAt: false
         });
