@@ -23,10 +23,7 @@ module.exports = (sequelize, DataTypes) => {
             created_at: {
                 type: DataTypes.DATE
             },
-            user_id: {
-                type: DataTypes.STRING,
-                allowNull: false
-            }
+            user_id: DataTypes.STRING
         },
         {
             sequelize,
