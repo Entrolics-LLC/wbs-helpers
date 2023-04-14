@@ -2,7 +2,7 @@
 const {
     Model
 } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes, schema) => {
     class User extends Model {
         /**
          * Helper method for defining associations.
