@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
             is_deleted: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE
+            },
+            user_id: {
+                type: DataTypes.STRING,
+                allowNull: false
             }
         },
         {
