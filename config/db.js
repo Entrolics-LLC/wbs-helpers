@@ -4,14 +4,14 @@ const addModels = require('../models')
 const addDynamicModels = require('../dynamicModels')
 const config = require('./config').development
 
-const init = (cloudConfig = config, schema = null) => {
+const init = (cloudConfig = config, schema = null, alter = false) => {
     try {
         let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en' })
 
         console.log('connecting...')
         db.authenticate()
         // db.sync()
-        db.sync({ alter: true })
+        db.sync({ alter })
         // db.sync({ force: true })
 
         console.log('Connection has been established successfully.')
