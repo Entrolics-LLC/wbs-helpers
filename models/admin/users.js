@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
             email: DataTypes.STRING,
             name: DataTypes.STRING,
             first_name: DataTypes.STRING,
-            company_name: DataTypes.STRING,
             last_name: DataTypes.STRING,
             title: DataTypes.STRING,
             phone: DataTypes.STRING,
@@ -45,7 +44,8 @@ module.exports = (sequelize, DataTypes) => {
             },
             updated_at: {
                 type: DataTypes.DATE
-            }
+            },
+            company_name: DataTypes.STRING
         },
         {
             sequelize,
