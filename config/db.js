@@ -45,6 +45,42 @@ const init = (cloudConfig = config, schema = null, alter = false) => {
     }
 }
 
+const initPromise = (cloudConfig = config, schema = null, alter = false) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en' })
+
+            console.log('connecting...')
+            db.authenticate()
+            // db.sync()
+            db.sync({ alter })
+            // db.sync({ force: true })
+
+            console.log('Connection has been established successfully.')
+
+            if (schema) {
+                console.log('schema')
+                try {
+                    await db.createSchema(schema)
+                        .then(() => console.log('new schema'))
+                        .catch((e) => console.log('error'))
+
+                    addDynamicModels(db, schema)
+                }
+                catch (e) {
+                }
+            }
+
+            resolve(db)
+        }
+        catch (error) {
+            console.log('Unable to connect to the database:', error)
+
+            reject(null)
+        }
+    })
+}
+
 // const createDB = () => {
 //     exec('cd node_modules && cd context-helpers && npm run createDB', (error, stdout, stderr) => {
 //         console.log('stdout: ' + stdout)
@@ -85,5 +121,6 @@ const migrateDB = () => {
 
 module.exports = {
     init,
-    migrateDB
+    migrateDB,
+    initPromise
 }
