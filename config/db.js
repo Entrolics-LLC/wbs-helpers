@@ -45,7 +45,7 @@ const init = (cloudConfig = config, schema = null, alter = false) => {
     }
 }
 
-const initPromise = (cloudConfig = config, schema = null, alter = false) => {
+const initPromise = (cloudConfig = config, schema, alter = false) => {
     return new Promise(async (resolve, reject) => {
         try {
             let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en' })
@@ -58,20 +58,20 @@ const initPromise = (cloudConfig = config, schema = null, alter = false) => {
 
             console.log('Connection has been established successfully.')
 
-            if (schema) {
-                console.log('schema')
-                try {
-                    await db.createSchema(schema)
-                        .then(() => console.log('new schema'))
-                        .catch((e) => console.log('error'))
+            try {
+                await db.createSchema(schema)
+                    .then(() => {
+                        console.log('new schema')
+                        resolve(db)
+                    })
+                    .catch((e) => console.log('error'))
 
-                    addDynamicModels(db, schema)
-                }
-                catch (e) {
-                }
+                addDynamicModels(db, schema)
+            }
+            catch (e) {
+                reject(null)
             }
 
-            resolve(db)
         }
         catch (error) {
             console.log('Unable to connect to the database:', error)
