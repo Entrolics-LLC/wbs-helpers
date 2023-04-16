@@ -62,9 +62,9 @@ const initPromise = (cloudConfig = config, schema, alter = false) => {
                 await db.createSchema(schema)
                     .then(() => {
                         console.log('new schema')
-                        resolve(db)
                     })
                     .catch((e) => console.log('error'))
+                    .finally(() => resolve(db))
 
                 addDynamicModels(db, schema)
             }
