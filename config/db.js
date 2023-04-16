@@ -46,40 +46,36 @@ const init = (cloudConfig = config, schema = null, alter = false) => {
 }
 
 const initPromise = (cloudConfig = config, schema, alter = false) => {
-    return new Promise(async (resolve, reject) => {
+    try {
+        let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en' })
+
+        console.log('connecting...')
+        db.authenticate()
+        // db.sync()
+        db.sync({ alter })
+        // db.sync({ force: true })
+
+        console.log('Connection has been established successfully.')
+
         try {
-            let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en' })
-
-            console.log('connecting...')
-            db.authenticate()
-            // db.sync()
-            db.sync({ alter })
-            // db.sync({ force: true })
-
-            console.log('Connection has been established successfully.')
-
-            try {
-                await db.createSchema(schema)
-                    .then(() => {
-                        console.log('new schema')
-                    })
-                    .catch((e) => console.log('error'))
-                    .finally(() => {
-                        addDynamicModels(db, schema)
-                        resolve(db)
-                    })
-            }
-            catch (e) {
-                reject(null)
-            }
-
+            db.createSchema(schema)
+                .then(() => {
+                    console.log('new schema')
+                })
+                .catch((e) => console.log('error'))
+            addDynamicModels(db, schema)
         }
-        catch (error) {
-            console.log('Unable to connect to the database:', error)
-
+        catch (e) {
             reject(null)
         }
-    })
+
+        return db
+    }
+    catch (error) {
+        console.log('Unable to connect to the database:', error)
+
+        return null
+    }
 }
 
 // const createDB = () => {
