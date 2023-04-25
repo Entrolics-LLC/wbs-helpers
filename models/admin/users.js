@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
             zip_code: DataTypes.STRING,
             avatar: DataTypes.STRING,
             password: DataTypes.STRING,
+            auth_type: DataTypes.STRING,
             access_token: DataTypes.ARRAY(DataTypes.STRING(5000)),
             role: DataTypes.STRING,
             is_deleted: {
