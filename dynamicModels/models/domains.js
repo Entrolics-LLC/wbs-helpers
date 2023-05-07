@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         {
             sequelize,
-            modelName: `${schema}_users`,
+            modelName: `${schema}_domains`,
             tableName: 'domains',
             schema,
             createdAt: false,
