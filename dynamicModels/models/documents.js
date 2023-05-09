@@ -21,7 +21,6 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             file_name: DataTypes.STRING,
-            name: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
