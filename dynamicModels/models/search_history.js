@@ -26,8 +26,8 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_search_historty`,
-            tableName: 'search_historty',
+            modelName: `${schema}_search_history`,
+            tableName: 'search_history',
             schema,
             createdAt: false,
             updatedAt: false
