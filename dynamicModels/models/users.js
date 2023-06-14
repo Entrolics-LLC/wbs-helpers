@@ -46,7 +46,12 @@ module.exports = (sequelize, DataTypes, schema) => {
             updated_at: {
                 type: DataTypes.DATE
             },
-            company_name: DataTypes.STRING
+            company_name: DataTypes.STRING,
+            sub_domain: DataTypes.STRING,
+            dev_mode: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            }
         },
         {
             sequelize,
