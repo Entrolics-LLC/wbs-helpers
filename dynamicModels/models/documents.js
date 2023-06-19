@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
+            user_id: DataTypes.STRING,
             file_name: DataTypes.STRING,
             status: {
                 type:DataTypes.STRING(1000),
