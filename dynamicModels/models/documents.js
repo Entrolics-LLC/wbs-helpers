@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             file_name: DataTypes.STRING,
+            status: {
+                type:DataTypes.STRING(1000),
+                defaultValue: 'uploaded'
+            },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
