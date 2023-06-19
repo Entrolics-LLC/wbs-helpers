@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             user_id: DataTypes.STRING,
             file_name: DataTypes.STRING,
+            parser: DataTypes.STRING,
+            error: DataTypes.STRING(1000),
             status: {
                 type:DataTypes.STRING(1000),
                 defaultValue: 'uploaded'
