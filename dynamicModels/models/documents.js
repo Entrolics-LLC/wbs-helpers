@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             parser: DataTypes.STRING,
             error: DataTypes.STRING(1000),
             status: DataTypes.ARRAY(DataTypes.STRING),
+            domain: DataTypes.ARRAY(DataTypes.STRING),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
