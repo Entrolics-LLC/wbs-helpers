@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes, schema) => {
         {
             search_id: {
                 type: DataTypes.STRING,
-                primaryKey: true,
                 allowNull: false
             },
             user_id: DataTypes.STRING,
