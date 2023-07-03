@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             users_id: DataTypes.ARRAY(DataTypes.STRING),
             user_id: DataTypes.ARRAY(DataTypes.STRING),
             domains: DataTypes.ARRAY(DataTypes.STRING),
-            contractName: DataTypes.STRING,
+            name: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
