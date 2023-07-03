@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             users_id: DataTypes.ARRAY(DataTypes.STRING),
-            user_id: DataTypes.ARRAY(DataTypes.STRING),
+            user_id: DataTypes.STRING,
             domains: DataTypes.ARRAY(DataTypes.STRING),
             name: DataTypes.STRING,
             is_deleted: {
