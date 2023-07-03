@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             users_id: DataTypes.ARRAY(DataTypes.STRING),
+            user_id: DataTypes.ARRAY(DataTypes.STRING),
             domains: DataTypes.ARRAY(DataTypes.STRING),
             contractName: DataTypes.STRING,
             is_deleted: {
@@ -29,7 +30,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             created_at: {
                 type: DataTypes.DATE
-            },
+            }
         },
         {
             sequelize,
