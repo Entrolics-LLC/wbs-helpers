@@ -20,7 +20,12 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
+            user_id: DataTypes.STRING,
             file_name: DataTypes.STRING,
+            parser: DataTypes.STRING,
+            error: DataTypes.STRING(1000),
+            status: DataTypes.ARRAY(DataTypes.STRING),
+            domain: DataTypes.ARRAY(DataTypes.STRING),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
