@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
-            users_id: DataTypes.ARRAY(DataTypes.STRING),
+            users_email: DataTypes.ARRAY(DataTypes.STRING),
             user_id: DataTypes.STRING,
             domains: DataTypes.ARRAY(DataTypes.STRING),
             name: DataTypes.STRING,
