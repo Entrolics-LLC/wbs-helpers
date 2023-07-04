@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             search: DataTypes.STRING(2000),
             reference_text: DataTypes.STRING(10000),
             file_name: DataTypes.STRING(512),
+            file_id: DataTypes.STRING,
             es_confidence: DataTypes.FLOAT,
             is_deleted: DataTypes.BOOLEAN,
             created_at: {
