@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             users_email: DataTypes.ARRAY(DataTypes.STRING),
             user_id: DataTypes.STRING,
             domains: DataTypes.ARRAY(DataTypes.STRING),
+            document_restrictions: DataTypes.ARRAY(DataTypes.JSONB),
             name: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
