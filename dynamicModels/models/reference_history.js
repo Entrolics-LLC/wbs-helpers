@@ -10,6 +10,11 @@ module.exports = (sequelize, DataTypes, schema) => {
     }
     ReferenceHistory.init(
         {
+            id: {
+                type: DataTypes.STRING,
+                primaryKey: true,
+                allowNull: false
+            },
             search_id: {
                 type: DataTypes.STRING,
                 allowNull: false
@@ -22,6 +27,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             uploaded_date: { type: DataTypes.DATE },
             es_confidence: DataTypes.FLOAT,
             is_deleted: DataTypes.BOOLEAN,
+            file_id: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
             }
