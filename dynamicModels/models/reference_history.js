@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             search: DataTypes.STRING(2000),
             reference_text: DataTypes.STRING(10000),
             file_name: DataTypes.STRING(512),
+            file_id: DataTypes.STRING,
             domain: DataTypes.ARRAY(DataTypes.STRING),
             uploaded_date: { type: DataTypes.DATE },
             es_confidence: DataTypes.FLOAT,
