@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
-            chat_id: DataTypes.STRING,
+            file_id: DataTypes.STRING,
             user_id: DataTypes.STRING,
             message: DataTypes.STRING,
             message_type: DataTypes.STRING,
