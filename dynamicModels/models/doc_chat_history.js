@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             file_id: DataTypes.STRING,
             user_id: DataTypes.STRING,
-            question: DataTypes.STRING,
-            answer: DataTypes.STRING,
+            question: DataTypes.STRING(100000),
+            answer: DataTypes.STRING(100000),
             is_deleted: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE
