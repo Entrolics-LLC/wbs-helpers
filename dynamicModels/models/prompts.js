@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             prompt: DataTypes.STRING,
-            description: DataTypes.STRING(1000),
+            description: DataTypes.STRING(2000),
         },
         {
             sequelize,
