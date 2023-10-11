@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             user_id: DataTypes.STRING,
-            // session_id: DataTypes.STRING,
+            session_id: DataTypes.STRING(1000),
             question: DataTypes.STRING(1000),
             result: DataTypes.STRING(1098765),
             prompt: DataTypes.STRING(9999),
