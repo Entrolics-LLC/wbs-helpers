@@ -10,12 +10,11 @@ module.exports = (sequelize, DataTypes, schema) => {
     }
     ResponseHistory.init(
         {
-            id: {
+            search_id: {
                 type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
-            search_id: DataTypes.STRING,
             response_text: DataTypes.STRING(10000),
             chatgpt_answer: DataTypes.STRING(10000),
             feedback: DataTypes.STRING,
