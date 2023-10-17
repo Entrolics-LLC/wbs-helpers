@@ -10,11 +10,12 @@ module.exports = (sequelize, DataTypes, schema) => {
     }
     ReferenceHistory.init(
         {
-            search_id: {
+            id: {
                 type: DataTypes.STRING,
-                allowNull: false,
                 primaryKey: true,
+                allowNull: false
             },
+            search_id: DataTypes.STRING,
             user_id: DataTypes.STRING,
             search: DataTypes.STRING(2000),
             reference_text: DataTypes.STRING(10000),
