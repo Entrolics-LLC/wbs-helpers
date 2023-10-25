@@ -10,7 +10,7 @@ const moment = require('moment')
 var jwt = require('jwt-simple')
 const isNull = require('./isNull')
 const codes = require('./codes.json')
-const { runQuery } = require('./postgresQueries')
+const { runQuery, runQueryWithReplacements } = require('./postgresQueries')
 
 const getGoogleFlow = (name, service_key) => (
     new Promise(async (resolve, reject) => {
@@ -866,5 +866,6 @@ module.exports = {
     isValidHttpUrl,
     isFalsyValue,
     validateFields,
-    getAuthS3Url
+    getAuthS3Url,
+    runQueryWithReplacements
 }
