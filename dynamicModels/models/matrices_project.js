@@ -33,8 +33,8 @@ module.exports = (sequelize, DataTypes, schema) => {
     },
         {
             sequelize,
-            modelName: `${schema}_matrices_project`,
-            tableName: 'matrices_project',
+            modelName: `${schema}_matrices_projects`,
+            tableName: 'matrices_projects',
             schema,
             createdAt: false,
             updatedAt: false
