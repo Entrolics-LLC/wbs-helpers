@@ -38,8 +38,9 @@ module.exports = (sequelize, DataTypes) => {
     },
         {
             sequelize,
-            modelName: 'matrices_questions',
-            schema: 'pensdown',
+            modelName: `${schema}_matrices_questions`,
+            tableName: 'matrices_questions',
+            schema,
             createdAt: false,
             updatedAt: false
         });
