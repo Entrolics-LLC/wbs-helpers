@@ -31,6 +31,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             auth_type: DataTypes.STRING,
             access_token: DataTypes.ARRAY(DataTypes.STRING(5000)),
             role: DataTypes.STRING,
+            token: DataTypes.STRING,
             pensdown_role: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
