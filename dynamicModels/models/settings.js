@@ -48,6 +48,16 @@ module.exports = (sequelize, DataTypes,schema) => {
             inject_sys_prompts: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
+            },
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            created_at: {
+                type: DataTypes.DATE
+            },
+            updated_at: {
+                type: DataTypes.DATE
             },          
         },
         {
