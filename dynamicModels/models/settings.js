@@ -23,6 +23,42 @@ module.exports = (sequelize, DataTypes,schema) => {
             model: DataTypes.STRING(255),
             start_prompt: DataTypes.STRING(10000),
             end_prompt: DataTypes.STRING(10000),           
+            bot_name: DataTypes.STRING(10000),           
+            hide_context_prompts: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },           
+            use_global_config: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },           
+            model: DataTypes.STRING(10000),           
+            temperature: DataTypes.INTEGER,           
+            top_p: DataTypes.INTEGER,           
+            max_tokens: DataTypes.INTEGER,           
+            presence_penalty: DataTypes.INTEGER,           
+            frequency_penalty: DataTypes.INTEGER,           
+            inject_sys_prompts: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },             
+            input_template: DataTypes.STRING,    
+            attached_messages_count: DataTypes.INTEGER,           
+            history_compression_threshold: DataTypes.INTEGER,  
+            inject_sys_prompts: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            created_at: {
+                type: DataTypes.DATE
+            },
+            updated_at: {
+                type: DataTypes.DATE
+            },          
         },
         {
             sequelize,
