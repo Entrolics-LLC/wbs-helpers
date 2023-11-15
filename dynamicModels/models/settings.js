@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes,schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },           
-            model: DataTypes.STRING(10000),           
+            lmn_model: DataTypes.STRING(10000),           
             temperature: DataTypes.INTEGER,           
             top_p: DataTypes.INTEGER,           
             max_tokens: DataTypes.INTEGER,           
