@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             user_id: DataTypes.STRING,
             file_name: DataTypes.STRING,
             file_type: DataTypes.STRING,
-            file_size: DataTypes.STRING,
+            file_size: DataTypes.INTEGER,
             parser: DataTypes.STRING,
             dag_run_id: DataTypes.STRING,
             error: DataTypes.STRING(1000),
