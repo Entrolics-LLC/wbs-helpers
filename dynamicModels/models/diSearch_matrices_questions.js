@@ -38,8 +38,8 @@ module.exports = (sequelize, DataTypes, schema) => {
     },
         {
             sequelize,
-            modelName: `${schema}_diSearch_matrices_questions`,
-            tableName: 'diSearch_matrices_questions',
+            modelName: `${schema}_disearch_matrices_questions`,
+            tableName: 'disearch_matrices_questions',
             schema,
             createdAt: false,
             updatedAt: false
