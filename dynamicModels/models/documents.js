@@ -35,7 +35,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             created_at: {
                 type: DataTypes.DATE
-            }
+            },
+            md5: DataTypes.STRING
         },
         {
             sequelize,
