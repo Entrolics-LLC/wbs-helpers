@@ -20,6 +20,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             description: DataTypes.STRING(100000),
             app_type: DataTypes.STRING,
             prompt: DataTypes.STRING,
+            prompt_type: DataTypes.STRING,
+            instruction_id: DataTypes.STRING,
             is_deleted: DataTypes.BOOLEAN,
             updated_at: {
                 type: DataTypes.DATE
