@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 defaultValue: false
             },
             input_template: DataTypes.STRING,
-            custom_instruction: DataTypes.STRING,
+            custom_instruction_id: DataTypes.STRING,
             attached_messages_count: DataTypes.INTEGER,
             history_compression_threshold: DataTypes.INTEGER,
             inject_sys_prompts: {
