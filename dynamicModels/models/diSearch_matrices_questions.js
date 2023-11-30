@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
         prompt: DataTypes.STRING(100000),
         domains: DataTypes.ARRAY(DataTypes.STRING),
         file_ids: DataTypes.ARRAY(DataTypes.STRING),
+        custom_instruction_id: DataTypes.STRING,
         project_id: DataTypes.STRING,
         is_deleted: {
             type: DataTypes.BOOLEAN,
