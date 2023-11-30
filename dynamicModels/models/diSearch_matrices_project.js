@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             allowNull: false
         },
         user_id: DataTypes.STRING,
+        app_id: DataTypes.STRING,
         project_name: DataTypes.STRING,
         is_deleted: {
             type: DataTypes.BOOLEAN,
