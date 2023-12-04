@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             file_name: DataTypes.STRING(512),
             file_id: DataTypes.STRING,
             domain: DataTypes.ARRAY(DataTypes.STRING),
+            filter_domains: DataTypes.ARRAY(DataTypes.STRING),
             uploaded_date: { type: DataTypes.DATE },
             es_confidence: DataTypes.FLOAT,
             is_deleted: DataTypes.BOOLEAN,
