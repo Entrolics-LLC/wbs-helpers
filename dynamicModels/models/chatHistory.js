@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             question: DataTypes.STRING(1000),
             result: DataTypes.STRING(1098765),
             prompt: DataTypes.STRING(9999),
+            images_url: DataTypes.ARRAY(DataTypes.STRING),
             is_deleted: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE
