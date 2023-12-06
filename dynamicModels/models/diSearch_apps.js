@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             prompt: DataTypes.STRING,
             prompt_type: DataTypes.STRING,
             instruction_id: DataTypes.STRING,
+            file_url: DataTypes.STRING,
             is_deleted: DataTypes.BOOLEAN,
             updated_at: {
                 type: DataTypes.DATE
