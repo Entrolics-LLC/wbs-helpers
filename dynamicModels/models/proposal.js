@@ -41,6 +41,9 @@ module.exports = (sequelize, DataTypes, schema) => {
             submission_date: {
                 type: DataTypes.DATE
             },
+            expiry_date: {
+                type: DataTypes.DATE
+            },
             created_at: {
                 type: DataTypes.DATE
             }
