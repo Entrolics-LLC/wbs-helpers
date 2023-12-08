@@ -55,8 +55,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             dev_mode: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
-            },
-            token: DataTypes.ARRAY(DataTypes.STRING(5000))
+            }
         },
         {
             sequelize,
