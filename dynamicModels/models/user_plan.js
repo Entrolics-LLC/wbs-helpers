@@ -21,6 +21,8 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             user_id: DataTypes.STRING,
+            customer_id: DataTypes.STRING,
+            product_id: DataTypes.STRING,
             plan_name: DataTypes.STRING,
             plan_type: DataTypes.STRING,
             plan_amount: DataTypes.FLOAT,
