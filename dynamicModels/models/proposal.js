@@ -44,6 +44,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             expiry_date: {
                 type: DataTypes.DATE
             },
+            teams_date_range:DataTypes.JSONB,
+            reviewers:DataTypes.JSONB,
             created_at: {
                 type: DataTypes.DATE
             }

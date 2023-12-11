@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
         proposal_id: DataTypes.STRING,
         title: DataTypes.STRING,
         description: DataTypes.STRING(100000),
+        team_name: DataTypes.STRING,
         event_start: DataTypes.STRING,
         event_end: DataTypes.STRING,
         event_time: DataTypes.JSONB,
