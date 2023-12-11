@@ -32,6 +32,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             access_token: DataTypes.ARRAY(DataTypes.STRING(5000)),
             role: DataTypes.STRING,
             token: DataTypes.STRING,
+            subscription_id: DataTypes.STRING,
+            plan_id: DataTypes.STRING,
             pensdown_role: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
