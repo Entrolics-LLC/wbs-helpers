@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             proposal_name: DataTypes.STRING,
+            dollar_value: DataTypes.INTEGER,
             model_name: DataTypes.STRING,
             proposal_manager: DataTypes.STRING,
             contributors: DataTypes.ARRAY(DataTypes.STRING),
@@ -44,8 +45,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             expiry_date: {
                 type: DataTypes.DATE
             },
-            teams_date_range:DataTypes.JSONB,
-            reviewers:DataTypes.JSONB,
+            teams_date_range: DataTypes.JSONB,
+            reviewers: DataTypes.JSONB,
             created_at: {
                 type: DataTypes.DATE
             }
