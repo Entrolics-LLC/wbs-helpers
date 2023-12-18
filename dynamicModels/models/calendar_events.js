@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes, schema) => {
         event_time: DataTypes.JSONB,
         contributors: DataTypes.ARRAY(DataTypes.STRING),
         all_day: DataTypes.BOOLEAN,
+        is_event: DataTypes.BOOLEAN,
         is_deleted: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
