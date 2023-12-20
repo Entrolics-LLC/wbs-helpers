@@ -27,14 +27,16 @@ module.exports = (sequelize, DataTypes, schema) => {
             approved_by: DataTypes.STRING,
             question_status: { type: DataTypes.STRING, defaultValue: 'unanswered' },
             contributors: DataTypes.ARRAY(DataTypes.STRING),
+            question_no: DataTypes.STRING,
+            heading: DataTypes.STRING(109765),
             created_at: {
                 type: DataTypes.DATE
             },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
-            },
-            question_no: DataTypes.STRING
+            }
+
         },
         {
             sequelize,
