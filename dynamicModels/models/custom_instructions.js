@@ -18,8 +18,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             name: DataTypes.STRING,
             user_id: DataTypes.STRING,
             start_prompt: DataTypes.STRING(10000),
-            end_prompt: DataTypes.STRING(10000),  
-            tone: DataTypes.ARRAY(DataTypes.STRING),
+            end_prompt: DataTypes.STRING(10000),
             updated_at: {
                 type: DataTypes.DATE
             },
