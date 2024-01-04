@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             error: DataTypes.STRING(1000),
             status: DataTypes.ARRAY(DataTypes.STRING),
             domain: DataTypes.ARRAY(DataTypes.STRING),
+            is_save_chat: DataTypes.BOOLEAN,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
