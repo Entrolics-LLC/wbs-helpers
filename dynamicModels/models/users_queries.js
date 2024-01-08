@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             user_id: DataTypes.STRING,
             query: DataTypes.STRING,
             query_type: DataTypes.STRING,
+            query_success: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE
             },
