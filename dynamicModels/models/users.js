@@ -35,7 +35,6 @@ module.exports = (sequelize, DataTypes, schema) => {
             subscription_id: DataTypes.STRING,
             plan_id: DataTypes.STRING,
             pensdown_role: DataTypes.STRING,
-            time_zone: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
@@ -58,7 +57,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             dev_mode: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
-            }
+            },
+            time_zone: DataTypes.STRING
         },
         {
             sequelize,
