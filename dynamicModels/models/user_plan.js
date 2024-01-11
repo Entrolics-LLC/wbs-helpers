@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             plan_type: DataTypes.STRING,
             plan_amount: DataTypes.FLOAT,
             plan_description: DataTypes.STRING,
+            plan_credits: DataTypes.FLOAT,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
