@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             user_id: DataTypes.STRING,
-            query: DataTypes.STRING,
+            query: DataTypes.STRING(109654),
             query_type: DataTypes.STRING,
             query_success: DataTypes.BOOLEAN,
             created_at: {
