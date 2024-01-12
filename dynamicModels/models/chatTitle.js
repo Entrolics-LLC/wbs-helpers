@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             user_id: DataTypes.STRING,
             session_id: DataTypes.STRING,
-            title: DataTypes.STRING,
+            title: DataTypes.STRING(1098765),
             is_deleted: DataTypes.BOOLEAN,
             updated_at: {
                 type: DataTypes.DATE
