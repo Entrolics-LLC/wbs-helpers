@@ -36,8 +36,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 defaultValue: false
             },
             created_at: DataTypes.DATE,
-            updated_at: DataTypes.DATE,
-            time_zone: DataTypes.STRING
+            updated_at: DataTypes.DATE
         },
         {
             sequelize,
