@@ -58,6 +58,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            new_user: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             time_zone: DataTypes.STRING
         },
         {
