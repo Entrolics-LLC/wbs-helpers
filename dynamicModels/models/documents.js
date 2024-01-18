@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             error: DataTypes.STRING(1000),
             status: DataTypes.ARRAY(DataTypes.STRING),
             domain: DataTypes.ARRAY(DataTypes.STRING),
+            web_url: DataTypes.STRING(109654),
             is_save_chat: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
@@ -41,7 +42,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             created_at: {
                 type: DataTypes.DATE
             },
-            md5: DataTypes.STRING
+            md5: DataTypes.STRING,
         },
         {
             sequelize,
