@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         proposal_id: DataTypes.STRING,
         project_name: DataTypes.STRING,
+        project_type: {
+            type: DataTypes.STRING,
+            defaultValue: 'Normal'
+        },
         is_deleted: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
