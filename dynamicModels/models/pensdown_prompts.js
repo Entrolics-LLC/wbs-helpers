@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         prompt_name: DataTypes.STRING,
         prompt_page: DataTypes.STRING,
-        prompt_value: DataTypes.STRING,
+        prompt_value: DataTypes.STRING(10000),
         is_deleted: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
