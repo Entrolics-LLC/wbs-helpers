@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    Notifications.init( {
+    Notifications.init({
         id: {
             type: DataTypes.STRING,
             primaryKey: true,
@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             defaultValue: false
         },
         is_read: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
+        is_pensdown: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
