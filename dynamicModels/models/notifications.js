@@ -32,6 +32,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             type: DataTypes.BOOLEAN,
             defaultValue: false
         },
+        is_new: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: true
+        },
         is_pensdown: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
