@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             file_size: DataTypes.INTEGER,
             parser: DataTypes.STRING,
             dag_run_id: DataTypes.STRING,
+            proposal_id: DataTypes.STRING,
             error: DataTypes.STRING(1000),
             status: DataTypes.ARRAY(DataTypes.STRING),
             domain: DataTypes.ARRAY(DataTypes.STRING),
