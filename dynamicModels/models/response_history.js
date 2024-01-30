@@ -15,8 +15,8 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
-            response_text: DataTypes.STRING(10000),
-            chatgpt_answer: DataTypes.STRING(10000),
+            response_text: DataTypes.STRING(1098765),
+            chatgpt_answer: DataTypes.STRING(1098765),
             feedback: DataTypes.STRING,
             rating: DataTypes.INTEGER,
             is_deleted: DataTypes.BOOLEAN,

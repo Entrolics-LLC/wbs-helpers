@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             domain: DataTypes.STRING,
-            description: DataTypes.STRING(1000),
+            description: DataTypes.STRING(1098765),
             parent_domain: DataTypes.STRING,
             created_by: DataTypes.STRING,
             guest_id: DataTypes.STRING,

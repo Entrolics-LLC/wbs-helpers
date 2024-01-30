@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         user_id: DataTypes.STRING,
         title: DataTypes.STRING,
-        description: DataTypes.STRING(1000),
+        description: DataTypes.STRING(1098765),
         info: DataTypes.STRING,
         route: DataTypes.STRING,
         is_deleted: {

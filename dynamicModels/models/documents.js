@@ -28,10 +28,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             parser: DataTypes.STRING,
             dag_run_id: DataTypes.STRING,
             proposal_id: DataTypes.STRING,
-            error: DataTypes.STRING(1000),
+            error: DataTypes.STRING(1098765),
             status: DataTypes.ARRAY(DataTypes.STRING),
             domain: DataTypes.ARRAY(DataTypes.STRING),
-            web_url: DataTypes.STRING(109654),
+            web_url: DataTypes.STRING(1098765),
             is_save_chat: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
