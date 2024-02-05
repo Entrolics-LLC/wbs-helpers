@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             model: DataTypes.STRING(255),
             temperature: DataTypes.FLOAT,
+            token_size: DataTypes.INTEGER,
             willshallprompt: DataTypes.STRING(109654),
             questionprompt: DataTypes.STRING(109654),
             answerprompt: DataTypes.STRING(109654),
