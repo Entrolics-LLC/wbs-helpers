@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             model: DataTypes.STRING(255),
+            temperature: DataTypes.FLOAT,
             willshallprompt: DataTypes.STRING(109654),
             questionprompt: DataTypes.STRING(109654),
             answerprompt: DataTypes.STRING(109654),
@@ -28,7 +29,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             finetuneprompt: DataTypes.STRING(109654),
             api_key: DataTypes.STRING(1000),
             usedisearch: DataTypes.STRING(10),
-            disearchserver: DataTypes.STRING(100)
+            disearchserver: DataTypes.STRING(100),
+            created_at: {
+                type: DataTypes.DATE
+            }
         },
         {
             sequelize,
