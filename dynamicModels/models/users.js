@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             guest_id: DataTypes.STRING,
             email: DataTypes.STRING,
             name: DataTypes.STRING,
-            title: DataTypes.STRING,
+            organization_name: DataTypes.STRING,
             phone: DataTypes.STRING,
             country: DataTypes.STRING,
             zip_code: DataTypes.STRING,
