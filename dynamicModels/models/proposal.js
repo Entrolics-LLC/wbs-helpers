@@ -35,6 +35,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             section_c: DataTypes.STRING(10485760),
             section_m: DataTypes.STRING(10485760),
             section_l: DataTypes.STRING(10485760),
+            outline_response: DataTypes.STRING(10485760),
             created_by: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
