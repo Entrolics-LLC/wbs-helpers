@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             contributors: DataTypes.ARRAY(DataTypes.STRING),
             question_no: DataTypes.STRING,
             heading: DataTypes.STRING(109765),
+            task_area: DataTypes.STRING(5000),
             created_at: {
                 type: DataTypes.DATE
             },
