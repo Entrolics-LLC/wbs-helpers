@@ -24,6 +24,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             customer_id: DataTypes.STRING,
             product_id: DataTypes.STRING,
             plan_name: DataTypes.STRING,
+            noOfGuest:DataTypes.FLOAT,
+            noOfLicense:DataTypes.FLOAT,
             plan_type: DataTypes.STRING,
             plan_amount: DataTypes.FLOAT,
             plan_description: DataTypes.STRING,
