@@ -14,11 +14,12 @@ module.exports = (sequelize, DataTypes, schema) => {
         }
     }
     PensdownResponse.init({
-        proposal_id: {
+        id: {
             type: DataTypes.STRING,
             primaryKey: true,
             allowNull: false
         },
+        proposal_id: DataTypes.STRING,
         section_number: DataTypes.STRING(10000),
         proposal_factors: DataTypes.STRING(10000),
         task_area: DataTypes.STRING(10000),
