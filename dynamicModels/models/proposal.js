@@ -24,7 +24,6 @@ module.exports = (sequelize, DataTypes, schema) => {
             dollar_value: DataTypes.INTEGER,
             model_name: DataTypes.STRING,
             contributors: DataTypes.ARRAY(DataTypes.STRING),
-            proposal_manager: DataTypes.ARRAY(DataTypes.STRING),
             file_url: DataTypes.STRING,
             gs_urls: DataTypes.ARRAY(DataTypes.STRING),
             api_key: DataTypes.STRING,
