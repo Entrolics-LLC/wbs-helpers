@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             plan_name: DataTypes.STRING,
             no_of_guest: DataTypes.FLOAT,
             no_of_license: DataTypes.FLOAT,
+            no_of_search: DataTypes.FLOAT,
             remaining_guest: DataTypes.FLOAT,
             remaining_license: DataTypes.FLOAT,
             plan_type: DataTypes.STRING,
