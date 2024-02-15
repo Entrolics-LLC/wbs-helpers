@@ -31,8 +31,6 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.FLOAT,
                 defaultValue: 0
             },
-            remaining_guest: DataTypes.FLOAT,
-            remaining_license: DataTypes.FLOAT,
             plan_type: DataTypes.STRING,
             plan_amount: DataTypes.FLOAT,
             plan_description: DataTypes.STRING,
