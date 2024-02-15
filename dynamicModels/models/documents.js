@@ -32,6 +32,11 @@ module.exports = (sequelize, DataTypes, schema) => {
             status: DataTypes.ARRAY(DataTypes.STRING),
             domain: DataTypes.ARRAY(DataTypes.STRING),
             web_url: DataTypes.STRING(1098765),
+            is_requested: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            requested_by: DataTypes.STRING,
             is_save_chat: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
