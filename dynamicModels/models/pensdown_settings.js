@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             temperature: DataTypes.FLOAT,
             token_size: DataTypes.INTEGER,
             willshallprompt: DataTypes.STRING(109654),
+            non_repeating_prompt: DataTypes.STRING(109654),
             questionprompt: DataTypes.STRING(109654),
             answerprompt: DataTypes.STRING(109654),
             agentprompt: DataTypes.STRING(109654),
