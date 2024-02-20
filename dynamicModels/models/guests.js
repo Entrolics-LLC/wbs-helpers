@@ -27,6 +27,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             access_token: DataTypes.ARRAY(DataTypes.STRING(5000)),
             role: DataTypes.STRING,
             token: DataTypes.STRING,
+            total_search: {
+                type: DataTypes.FLOAT,
+                defaultValue: 0
+            },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
