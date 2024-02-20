@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             es_confidence: DataTypes.FLOAT,
             is_deleted: DataTypes.BOOLEAN,
             file_id: DataTypes.STRING,
+            content_type: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
             }
