@@ -26,9 +26,6 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
-            is_validated: {
-                type: DataTypes.BOOLEAN
-            },
             created_at: {
                 type: DataTypes.DATE
             },
