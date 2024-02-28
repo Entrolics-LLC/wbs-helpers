@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             compliance_status: DataTypes.STRING,
             proposal_question_id: DataTypes.STRING,
             contributors: DataTypes.ARRAY(DataTypes.STRING),
-            citations: DataTypes.ARRAY(DataTypes.STRING(109654)),
+            citations: DataTypes.JSONB,
             action: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
