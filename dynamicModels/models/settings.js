@@ -54,6 +54,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            is_section: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             created_at: {
                 type: DataTypes.DATE
             },
