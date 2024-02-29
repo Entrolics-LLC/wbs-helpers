@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             questionprompt: DataTypes.STRING(109654),
             answerprompt: DataTypes.STRING(109654),
             agentprompt: DataTypes.STRING(109654),
+            nrprompt: DataTypes.STRING(109654),
             finetuneprompt: DataTypes.STRING(109654),
             api_key: DataTypes.STRING(1000),
             usedisearch: DataTypes.STRING(10),
