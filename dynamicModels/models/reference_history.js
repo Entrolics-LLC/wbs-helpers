@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             is_deleted: DataTypes.BOOLEAN,
             file_id: DataTypes.STRING,
             content_type: DataTypes.STRING,
+            meta: DataTypes.JSONB,
             created_at: {
                 type: DataTypes.DATE
             }

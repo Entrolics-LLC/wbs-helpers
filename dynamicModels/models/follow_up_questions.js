@@ -3,41 +3,34 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class customInstructions extends Model {
+    class FollowUpQuestions extends Model {
         static associate(models) {
             // define association here
         }
     }
-    customInstructions.init(
+    FollowUpQuestions.init(
         {
             id: {
                 type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
-            name: DataTypes.STRING,
+            search_id: DataTypes.STRING,
             user_id: DataTypes.STRING,
-            start_prompt: DataTypes.STRING(1098765),
-            end_prompt: DataTypes.STRING(1098765),
-            tone: DataTypes.ARRAY(DataTypes.STRING),
-            is_section: {
-                type: DataTypes.BOOLEAN,
-                defaultValue: false
-            },
-            updated_at: {
-                type: DataTypes.DATE
-            },
+            question: DataTypes.STRING(100000),
+            answer: DataTypes.STRING(100000),
+            is_deleted: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE
             }
         },
         {
             sequelize,
-            modelName: `${schema}_custom_instruction`,
-            tableName: 'custom_instruction',
+            modelName: `${schema}_follow_up_questions`,
+            tableName: 'follow_up_questions',
             schema,
             createdAt: false,
             updatedAt: false
         });
-    return customInstructions;
+    return FollowUpQuestions;
 };

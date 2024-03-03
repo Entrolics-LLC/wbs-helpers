@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class Reviews extends Model {
+    class APIKey extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,36 +13,36 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    Reviews.init(
+    APIKey.init(
         {
-            answer_id: {
+            id: {
                 type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
-            question_text: DataTypes.STRING(109654),
-            answer_text: DataTypes.JSONB,
-            reference_text: DataTypes.STRING(109654),
-            compliance_status: DataTypes.STRING,
-            proposal_question_id: DataTypes.STRING,
-            contributors: DataTypes.ARRAY(DataTypes.STRING),
-            citations: DataTypes.JSONB,
-            action: DataTypes.STRING,
+            user_id: DataTypes.STRING,
+            name: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
             created_at: {
                 type: DataTypes.DATE
-            }
+            },
+            updated_at: {
+                type: DataTypes.DATE
+            },
+            expire_at: {
+                type: DataTypes.DATE
+            },
         },
         {
             sequelize,
-            modelName: `${schema}_answer_histories`,
-            tableName: 'answer_histories',
+            modelName: `${schema}_api_key`,
+            tableName: 'api_key',
             schema,
             createdAt: false,
             updatedAt: false
         });
-    return Reviews;
+    return APIKey;
 };
