@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             user_id: DataTypes.STRING,
-            project_name: DataTypes.STRING,
+            project_name: DataTypes.STRING(100000),
             output: DataTypes.JSONB,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
