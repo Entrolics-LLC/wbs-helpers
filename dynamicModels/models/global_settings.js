@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             model: DataTypes.STRING(255),
+            model_type: DataTypes.STRING(255),
             temperature:{
                 type: DataTypes.FLOAT,
                 defaultValue: 0.9
