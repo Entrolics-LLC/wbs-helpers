@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             project_name: DataTypes.STRING(100000),
             output: DataTypes.JSONB,
             parent_id: DataTypes.STRING,
+            shared_with: DataTypes.ARRAY(DataTypes.STRING),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
