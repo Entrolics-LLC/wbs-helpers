@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             start_prompt: DataTypes.STRING(1098765),
             end_prompt: DataTypes.STRING(1098765),
             tone: DataTypes.ARRAY(DataTypes.STRING),
+            shared_with: DataTypes.ARRAY(DataTypes.STRING),
             is_section: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
