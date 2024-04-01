@@ -25,6 +25,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             updated_at: {
                 type: DataTypes.DATE
             },
