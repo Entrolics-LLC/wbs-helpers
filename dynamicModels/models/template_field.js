@@ -21,7 +21,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             template_id: DataTypes.STRING,
-            field_id: DataTypes.STRING,
+            name: DataTypes.STRING(109765),
+            description: DataTypes.STRING(109765),
+            placeholder: DataTypes.STRING(109765),
+            type: DataTypes.STRING(109765),
             required: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
