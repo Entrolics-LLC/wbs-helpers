@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             description: DataTypes.STRING(109765),
             icon: DataTypes.STRING(109765),
             prompt: DataTypes.STRING(109765),
-            type: DataTypes.STRING(109765),
+            type: DataTypes.ARRAY(DataTypes.STRING),
             user_id: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
