@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             end_prompt: DataTypes.STRING(1098765),
             tone: DataTypes.ARRAY(DataTypes.STRING),
             shared_with: DataTypes.ARRAY(DataTypes.STRING),
-            llmModel: DataTypes.JSONB,
+            llm_model: DataTypes.JSONB,
             is_section: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
