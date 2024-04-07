@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            title: DataTypes.STRING(1098765),
             updated_at: {
                 type: DataTypes.DATE,
                 allowNull: false
