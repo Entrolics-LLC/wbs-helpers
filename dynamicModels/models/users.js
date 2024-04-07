@@ -37,9 +37,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             plan_id: DataTypes.STRING,
             pensdown_role: DataTypes.STRING,
             screen_mode: {
-                type: DataTypes.FLOAT,
+                type: DataTypes.STRING,
                 defaultValue: 'search_view'
-            }, total_search: {
+            },
+            total_search: {
                 type: DataTypes.FLOAT,
                 defaultValue: 0
             },
