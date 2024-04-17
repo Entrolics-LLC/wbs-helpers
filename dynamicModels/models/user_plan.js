@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             plan_amount: DataTypes.FLOAT,
             plan_description: DataTypes.STRING,
             plan_credits: DataTypes.FLOAT,
-            cancel_date: DataTypes.STRING,
+            ended_date: DataTypes.STRING,
             is_cancelled: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
