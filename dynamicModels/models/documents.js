@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             requested_by: DataTypes.STRING,
             is_save_chat: {
                 type: DataTypes.BOOLEAN,
-                defaultValue: false
+                defaultValue: true
             },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
