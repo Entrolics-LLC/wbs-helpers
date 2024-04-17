@@ -40,6 +40,14 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.STRING,
                 defaultValue: 'search_view'
             },
+            search_quota: {
+                type: DataTypes.FLOAT,
+                defaultValue: 0
+            },
+            document_quota: {
+                type: DataTypes.FLOAT,
+                defaultValue: 0
+            },
             total_search: {
                 type: DataTypes.FLOAT,
                 defaultValue: 0
