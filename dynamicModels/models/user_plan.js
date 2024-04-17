@@ -44,6 +44,9 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            expiry_at: {
+                type: DataTypes.DATE
+            },
             created_at: {
                 type: DataTypes.DATE
             },
