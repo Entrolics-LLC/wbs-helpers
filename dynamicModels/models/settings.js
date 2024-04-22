@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             model: DataTypes.STRING(255),
+            model_type: DataTypes.STRING(255),
             start_prompt: DataTypes.STRING(10000),
             end_prompt: DataTypes.STRING(10000),
             bot_name: DataTypes.STRING(10000),
