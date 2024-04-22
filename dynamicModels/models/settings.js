@@ -35,9 +35,14 @@ module.exports = (sequelize, DataTypes, schema) => {
             lmn_model: DataTypes.STRING(10000),
             temperature: DataTypes.INTEGER,
             top_p: DataTypes.INTEGER,
+            top_k: DataTypes.INTEGER,
             max_tokens: DataTypes.INTEGER,
             presence_penalty: DataTypes.INTEGER,
             frequency_penalty: DataTypes.INTEGER,
+            is_section: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             inject_sys_prompts: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
