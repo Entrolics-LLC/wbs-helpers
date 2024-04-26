@@ -15,11 +15,15 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true
             },
             user_id: DataTypes.STRING,
+            title: DataTypes.STRING(1098765),
+            llm_model: DataTypes.JSONB,
+            search_type: DataTypes.STRING,
+            feedback: DataTypes.STRING(1098765),
+            rating: DataTypes.INTEGER,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
-            title: DataTypes.STRING(1098765),
             updated_at: {
                 type: DataTypes.DATE,
                 allowNull: false

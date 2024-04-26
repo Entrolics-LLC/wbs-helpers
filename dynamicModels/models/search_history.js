@@ -18,10 +18,14 @@ module.exports = (sequelize, DataTypes, schema) => {
             user_id: DataTypes.STRING,
             session_id: DataTypes.STRING,
             question: DataTypes.STRING(1098765),
-            result: DataTypes.JSON,
+            answer: DataTypes.STRING(1098765),
             is_deleted: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE
+            },
+            updated_at: {
+                type: DataTypes.DATE,
+                allowNull: false
             }
         },
         {
