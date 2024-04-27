@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             question: DataTypes.STRING(1098765),
             answer: DataTypes.STRING(1098765),
             filter_domains: DataTypes.ARRAY(DataTypes.STRING),
+            recommended_questions: DataTypes.ARRAY(DataTypes.STRING),
             is_deleted: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE
