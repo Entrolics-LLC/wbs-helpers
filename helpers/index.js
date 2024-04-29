@@ -107,11 +107,16 @@ const arrayIntoBigqueryArray = (array) => ( //Convert JS Array into Bigquery Arr
         : `[]`
 )
 
-const arrayIntoPostgresqlArray = (array) => ( //Convert JS Array into Bigquery Array, Use only for array of strings.
-    Boolean(Array.isArray(array) && array?.length) ?
-        `'{"${array.toString().split(",").join(`","`)}"}'`
-        : `'{}'`
-)
+const arrayIntoPostgresqlArray = (array) => {
+    if (Array.isArray(array) && array.length) {
+        // Map the array elements into properly escaped strings for PostgreSQL, and join them into a PostgreSQL array format.
+        const pgArray = array.map(element => `"${element.replace(/"/g, '\\"')}"`).join(',');
+        return `'{${pgArray}}'`;
+    }
+    else {
+        return "'{}'"; // PostgreSQL empty array syntax
+    }
+}
 
 const keyPairTable = `context.schema_form_key_pairs`
 const graphSchemaTable = `context.template_graph_schemas`
