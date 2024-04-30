@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             session_id: DataTypes.STRING,
             search_id: DataTypes.STRING,
             user_id: DataTypes.STRING,
+            search: DataTypes.STRING(1098765),
             reference_text: DataTypes.STRING(1098765),
             file_name: DataTypes.STRING(1098765),
             file_id: DataTypes.STRING,
