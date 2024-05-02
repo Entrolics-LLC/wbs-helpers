@@ -28,6 +28,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             created_at: {
                 type: DataTypes.DATE
+            },
+            updated_at: {
+                type: DataTypes.DATE,
+                allowNull: true
             }
         },
         {
