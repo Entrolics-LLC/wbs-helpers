@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
-            template_name: DataTypes.STRING,
+            name: DataTypes.STRING,
             gs_urls: DataTypes.ARRAY(DataTypes.STRING),
             created_by: DataTypes.STRING,
             is_deleted: {
