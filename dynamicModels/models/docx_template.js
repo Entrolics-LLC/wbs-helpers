@@ -31,8 +31,8 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_docx_template`,
-            tableName: 'docx_template',
+            modelName: `${schema}_docx_templates`,
+            tableName: 'docx_templates',
             schema,
             createdAt: false,
             updatedAt: false
