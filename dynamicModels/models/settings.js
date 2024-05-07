@@ -52,6 +52,12 @@ module.exports = (sequelize, DataTypes, schema) => {
             custom_instruction_id: DataTypes.STRING,
             attached_messages_count: DataTypes.INTEGER,
             history_compression_threshold: DataTypes.INTEGER,
+            search_neighbor_chunks: DataTypes.INTEGER,
+            doc_chat_neighbor_chunks: DataTypes.INTEGER,
+            neighbor_chunks: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             inject_sys_prompts: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
