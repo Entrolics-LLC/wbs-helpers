@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             feedback: DataTypes.STRING(1098765),
             rating: DataTypes.INTEGER,
             file_ids: DataTypes.ARRAY(DataTypes.STRING),
+            di_search: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
