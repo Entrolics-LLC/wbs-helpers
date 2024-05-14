@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes, schema) => {
         user_id: DataTypes.STRING,
         proposal_id: DataTypes.STRING,
         file_id: DataTypes.STRING,
+        section: DataTypes.STRING,
         content: DataTypes.STRING(109765),
         position: DataTypes.JSONB,
         is_deleted: {
