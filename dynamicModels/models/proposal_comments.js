@@ -22,12 +22,8 @@ module.exports = (sequelize, DataTypes, schema) => {
         user_id: DataTypes.STRING,
         proposal_id: DataTypes.STRING,
         file_id: DataTypes.STRING,
-        section_c: DataTypes.STRING(109765),
-        section_l: DataTypes.STRING(109765),
-        section_m: DataTypes.STRING(109765),
-        section_c_position: DataTypes.JSONB,
-        section_l_position: DataTypes.JSONB,
-        section_m_position: DataTypes.JSONB,
+        content: DataTypes.STRING(109765),
+        position: DataTypes.JSONB,
         is_deleted: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
