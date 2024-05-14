@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class ProposalSectionsHighlight extends Model {
+    class ProposalPDFHighlight extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    ProposalSectionsHighlight.init({
+    ProposalPDFHighlight.init({
         id: {
             type: DataTypes.STRING,
             primaryKey: true,
@@ -38,11 +38,11 @@ module.exports = (sequelize, DataTypes, schema) => {
     },
         {
             sequelize,
-            modelName: `${schema}_proposal_sections_higlight`,
-            tableName: 'proposal_sections_higlight',
+            modelName: `${schema}_proposal_pdf_highlight`,
+            tableName: 'proposal_pdf_highlight',
             schema,
             createdAt: false,
             updatedAt: false
         });
-    return ProposalSectionsHighlight;
+    return ProposalPDFHighlight;
 };
