@@ -31,6 +31,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             password: DataTypes.STRING,
             auth_type: DataTypes.STRING,
             access_token: DataTypes.ARRAY(DataTypes.STRING(5000)),
+            reset_password_token: DataTypes.STRING(5000),
             role: DataTypes.STRING,
             token: DataTypes.STRING,
             subscription_id: DataTypes.STRING,
