@@ -42,6 +42,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: true
             },
+            is_parsed: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
