@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             model_type: DataTypes.STRING,
             max_token: DataTypes.INTEGER,
             is_image_support: DataTypes.BOOLEAN,
-            system_prompt: DataTypes.STRING,
+            system_prompt: DataTypes.STRING(1098765),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
