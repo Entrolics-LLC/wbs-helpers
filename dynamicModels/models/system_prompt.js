@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
+            user_id: DataTypes.STRING,
             name: DataTypes.STRING,
             system_prompt: DataTypes.STRING(1098765),
             is_deleted: {
