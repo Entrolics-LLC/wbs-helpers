@@ -19,7 +19,6 @@ module.exports = (sequelize, DataTypes, schema) => {
             session_id: DataTypes.STRING,
             question: DataTypes.STRING(1098765),
             answer: DataTypes.STRING(1098765),
-            domains: DataTypes.ARRAY(DataTypes.STRING),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
