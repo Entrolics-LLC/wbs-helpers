@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             user_id: DataTypes.STRING,
             title: DataTypes.STRING(1098765),
-            file_ids: DataTypes.ARRAY(DataTypes.STRING),
             domains: DataTypes.ARRAY(DataTypes.STRING),
             di_search: {
                 type: DataTypes.BOOLEAN,
