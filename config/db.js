@@ -4,9 +4,15 @@ const addModels = require('../models')
 const addDynamicModels = require('../dynamicModels')
 const config = require('./config').development
 
+const logging = (msg) => {
+    if (msg.includes('Error')) {
+        console.log(msg)
+    }
+}
+
 const init = (cloudConfig = config, schema = null, alter = false) => {
     try {
-        let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en' })
+        let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en', logging })
 
         console.log('connecting...')
         db.authenticate()
@@ -47,7 +53,7 @@ const init = (cloudConfig = config, schema = null, alter = false) => {
 
 const initPromise = (cloudConfig = config, schema, alter = false) => {
     try {
-        let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en' })
+        let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en', logging })
 
         console.log('connecting...')
         db.authenticate()
