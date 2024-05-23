@@ -18,6 +18,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             user_id: DataTypes.STRING,
             name: DataTypes.STRING,
             system_prompt: DataTypes.STRING(1098765),
+            llm_models: DataTypes.ARRAY(DataTypes.JSONB),
+            description: DataTypes.STRING(10987),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
