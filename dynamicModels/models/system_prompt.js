@@ -20,6 +20,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             system_prompt: DataTypes.STRING(1098765),
             llm_models: DataTypes.ARRAY(DataTypes.STRING),
             description: DataTypes.STRING(10987),
+            is_default: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
