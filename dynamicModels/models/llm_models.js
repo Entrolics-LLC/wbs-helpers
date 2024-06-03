@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
+            model: DataTypes.STRING,
             model_name: DataTypes.STRING,
             model_type: DataTypes.STRING,
             max_token: DataTypes.INTEGER,
