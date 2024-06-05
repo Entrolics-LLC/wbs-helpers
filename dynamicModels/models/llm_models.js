@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             model_type: DataTypes.STRING,
             max_token: DataTypes.INTEGER,
             is_image_support: DataTypes.BOOLEAN,
+            is_home: DataTypes.BOOLEAN,
             system_prompt: DataTypes.STRING(1098765),
             system_prompt_id: DataTypes.STRING,
             is_deleted: {
