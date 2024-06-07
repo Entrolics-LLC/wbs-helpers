@@ -65,6 +65,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             is_validated: {
                 type: DataTypes.BOOLEAN
             },
+            is_agreement_accepted: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             created_at: {
                 type: DataTypes.DATE
             },
