@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             file_url: DataTypes.STRING,
             gs_urls: DataTypes.ARRAY(DataTypes.STRING),
             background: DataTypes.STRING(10485760),
+            xml: DataTypes.STRING(10485760),
             api_key: DataTypes.STRING,
             status: DataTypes.STRING,
             proposal_type: DataTypes.STRING,
