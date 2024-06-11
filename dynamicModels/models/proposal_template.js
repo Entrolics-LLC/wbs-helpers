@@ -16,9 +16,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             template_name: DataTypes.STRING,
-            section_l: DataTypes.STRING(1098765),
-            section_m: DataTypes.STRING(1098765),
-            section_c: DataTypes.STRING(1098765),
+            proposal_id: DataTypes.STRING,
             description: DataTypes.STRING(1098765),
             type: DataTypes.STRING,
             created_by: DataTypes.STRING,

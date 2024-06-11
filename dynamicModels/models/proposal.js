@@ -42,6 +42,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             poc_email: DataTypes.STRING,
             poc_phone: DataTypes.STRING,
             organization_id: DataTypes.STRING,
+            template_id: DataTypes.STRING,
             contract_vehicles: DataTypes.ARRAY(DataTypes.STRING),
             created_by: DataTypes.STRING,
             is_deleted: {
