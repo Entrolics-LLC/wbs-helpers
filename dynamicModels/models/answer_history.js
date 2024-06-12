@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             question_text: DataTypes.STRING(109654),
             answer_text: DataTypes.JSONB,
             reference_text: DataTypes.STRING(109654),
+            justification: DataTypes.STRING(10485760),
             compliance_status: DataTypes.STRING,
             proposal_question_id: DataTypes.STRING,
             contributors: DataTypes.ARRAY(DataTypes.STRING),
