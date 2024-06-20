@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            user_id: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
             },
