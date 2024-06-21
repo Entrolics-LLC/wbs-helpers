@@ -28,8 +28,8 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_vertexai_settigns`,
-            tableName: 'vertexai_settigns',
+            modelName: `${schema}_vertexai_settings`,
+            tableName: 'vertexai_settings',
             schema,
             createdAt: false,
             updatedAt: false
