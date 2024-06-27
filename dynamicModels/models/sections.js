@@ -26,7 +26,11 @@ module.exports = (sequelize, DataTypes, schema) => {
             created_at: {
                 type: DataTypes.DATE
             },
-            section_no: DataTypes.STRING
+            section_no: DataTypes.STRING,
+            is_template: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
         },
         {
             sequelize,
