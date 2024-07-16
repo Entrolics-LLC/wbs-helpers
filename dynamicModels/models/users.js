@@ -36,6 +36,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             token: DataTypes.STRING,
             subscription_id: DataTypes.STRING,
             plan_id: DataTypes.STRING,
+            customer_id: DataTypes.STRING,
             pensdown_role: DataTypes.STRING,
             vertexai: DataTypes.JSONB,
             screen_mode: {
