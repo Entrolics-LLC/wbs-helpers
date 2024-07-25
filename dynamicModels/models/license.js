@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             procurement_account_id: DataTypes.STRING,
             entitlement_id: DataTypes.STRING,
-            licenses: DataTypes.INTEGER,
+            user_licenses: DataTypes.INTEGER,
             updated_at: {
                 type: DataTypes.DATE
             },
