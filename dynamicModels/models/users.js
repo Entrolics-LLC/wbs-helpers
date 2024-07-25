@@ -64,6 +64,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            is_disabled: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_validated: {
                 type: DataTypes.BOOLEAN
             },
