@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class Sections extends Model {
+    class License extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,32 +13,30 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    Sections.init(
+    License.init(
         {
-            section_id: {
+            id: {
                 type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
-            section_name: DataTypes.STRING,
-            parent_id: DataTypes.STRING,
-            section_no: DataTypes.STRING,
-            created_at: {
+            procurement_account_id: DataTypes.STRING,
+            entitlement_id: DataTypes.STRING,
+            user_licenses: DataTypes.INTEGER,
+            updated_at: {
                 type: DataTypes.DATE
             },
-            section_no: DataTypes.STRING,
-            is_template: {
-                type: DataTypes.BOOLEAN,
-                defaultValue: false
-            },
+            created_at: {
+                type: DataTypes.DATE
+            }
         },
         {
             sequelize,
-            modelName: `${schema}_sections`,
-            tableName: 'sections',
+            modelName: `${schema}_license`,
+            tableName: 'license',
             schema,
             createdAt: false,
             updatedAt: false
         });
-    return Sections;
+    return License;
 };

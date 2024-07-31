@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             filter_domains: DataTypes.ARRAY(DataTypes.STRING),
             recommended_questions: DataTypes.ARRAY(DataTypes.STRING),
             files: DataTypes.ARRAY(DataTypes.STRING),
+            chart_meta_data: DataTypes.JSONB,
+            table_name: DataTypes.STRING,
             total_count: DataTypes.INTEGER,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
