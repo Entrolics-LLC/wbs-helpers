@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             storage: DataTypes.INTEGER,
             support: DataTypes.BOOLEAN,
             plan_type: DataTypes.STRING,
-            plan_descripition: DataTypes.STRING,
+            plan_description: DataTypes.STRING,
             is_available: DataTypes.BOOLEAN,
             features: DataTypes.ARRAY(DataTypes.JSONB),
             monthly_price: DataTypes.FLOAT,
