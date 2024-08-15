@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.FLOAT,
                 defaultValue: 0
             },
+            plan_amount: {
+                type: DataTypes.FLOAT,
+                defaultValue: 0
+            },
             is_cancelled: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
