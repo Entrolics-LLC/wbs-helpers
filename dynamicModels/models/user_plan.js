@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class Plan extends Model {
+    class Plans extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,45 +13,31 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    Plan.init(
+    Plans.init(
         {
-            id: {
+            plan_id: {
                 type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
-            user_id: DataTypes.STRING,
-            subscription_id: DataTypes.STRING,
-            customer_id: DataTypes.STRING,
-            product_id: DataTypes.STRING,
             plan_name: DataTypes.STRING,
-            no_of_guest: DataTypes.FLOAT,
-            no_of_license: DataTypes.FLOAT,
-            no_of_search: DataTypes.FLOAT,
-            no_of_used_search: {
-                type: DataTypes.FLOAT,
-                defaultValue: 0
-            },
+            no_of_guest: DataTypes.INTEGER,
+            no_of_license: DataTypes.INTEGER,
+            no_of_search: DataTypes.INTEGER,
+            storage: DataTypes.INTEGER,
+            support: DataTypes.BOOLEAN,
             plan_type: DataTypes.STRING,
-            plan_amount: DataTypes.FLOAT,
-            plan_description: DataTypes.STRING,
-            plan_credits: DataTypes.FLOAT,
-            ended_date: DataTypes.STRING,
-            is_cancelled: {
-                type: DataTypes.BOOLEAN,
-                defaultValue: false
-            },
+            plan_descripition: DataTypes.STRING,
+            is_available: DataTypes.BOOLEAN,
+            features: DataTypes.ARRAY(DataTypes.JSONB),
+            monthly_price: DataTypes.FLOAT,
+            yearly_price: DataTypes.FLOAT,
+            user_id: DataTypes.ARRAY(DataTypes.STRING),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
-            expiry_at: {
-                type: DataTypes.DATE
-            },
             created_at: {
-                type: DataTypes.DATE
-            },
-            updated_at: {
                 type: DataTypes.DATE
             }
         },
@@ -63,5 +49,5 @@ module.exports = (sequelize, DataTypes, schema) => {
             createdAt: false,
             updatedAt: false
         });
-    return Plan;
+    return Plans;
 };
