@@ -24,14 +24,12 @@ module.exports = (sequelize, DataTypes, schema) => {
             subscription_id: DataTypes.STRING,
             customer_id: DataTypes.STRING,
             product_id: DataTypes.STRING,
-            plan_name: DataTypes.STRING,
-            disearch_plan_id: DataTypes.STRING,
+            plan_id: DataTypes.STRING,
             subscription_type: DataTypes.STRING,
             no_of_used_search: {
                 type: DataTypes.FLOAT,
                 defaultValue: 0
             },
-            ended_date: DataTypes.STRING,
             is_cancelled: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
