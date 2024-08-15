@@ -25,17 +25,12 @@ module.exports = (sequelize, DataTypes, schema) => {
             customer_id: DataTypes.STRING,
             product_id: DataTypes.STRING,
             plan_name: DataTypes.STRING,
-            no_of_guest: DataTypes.FLOAT,
-            no_of_license: DataTypes.FLOAT,
-            no_of_search: DataTypes.FLOAT,
+            disearch_plan_id: DataTypes.STRING,
+            subscription_type: DataTypes.STRING,
             no_of_used_search: {
                 type: DataTypes.FLOAT,
                 defaultValue: 0
             },
-            plan_type: DataTypes.STRING,
-            plan_amount: DataTypes.FLOAT,
-            plan_description: DataTypes.STRING,
-            plan_credits: DataTypes.FLOAT,
             ended_date: DataTypes.STRING,
             is_cancelled: {
                 type: DataTypes.BOOLEAN,
