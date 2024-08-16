@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             features: DataTypes.ARRAY(DataTypes.JSONB),
             monthly_price: DataTypes.FLOAT,
             yearly_price: DataTypes.FLOAT,
-            user_id: DataTypes.ARRAY(DataTypes.STRING),
+            user_ids: DataTypes.ARRAY(DataTypes.STRING),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
