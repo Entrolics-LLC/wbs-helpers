@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             product_id: DataTypes.STRING,
             plan_id: DataTypes.STRING,
             subscription_type: DataTypes.STRING,
+            no_of_search: DataTypes.INTEGER,
             no_of_used_search: {
                 type: DataTypes.FLOAT,
                 defaultValue: 0
