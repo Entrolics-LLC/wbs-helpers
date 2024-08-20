@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             vertexai: DataTypes.JSONB,
             screen_mode: {
                 type: DataTypes.STRING,
-                defaultValue: 'search_view'
+                defaultValue: 'conversation_view'
             },
             search_quota: {
                 type: DataTypes.FLOAT,
