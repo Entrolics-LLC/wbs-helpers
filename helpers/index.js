@@ -835,6 +835,15 @@ const validateFields = (input, project_id, rule_id) => {
     }
 }
 
+const trimWhitespaceEnv = (input) => {
+    if (typeof input === 'string') {
+        return input?.trim();
+    } else if (typeof input === 'number' || typeof input === 'boolean' || input === null || input === undefined) {
+        return input;
+    }
+    else return input;
+}
+
 module.exports = {
     runQuery,
     parseVideoData,
@@ -872,5 +881,6 @@ module.exports = {
     isFalsyValue,
     validateFields,
     getAuthS3Url,
-    runQueryWithReplacements
+    runQueryWithReplacements,
+    trimWhitespaceEnv
 }
