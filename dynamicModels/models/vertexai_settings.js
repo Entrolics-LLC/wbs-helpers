@@ -22,6 +22,12 @@ module.exports = (sequelize, DataTypes, schema) => {
             entity_person_boost_enable: DataTypes.BOOLEAN,
             entity_org_boost: DataTypes.FLOAT,
             entity_org_boost_enable: DataTypes.BOOLEAN,
+            entity_product_service: DataTypes.FLOAT,
+            entity_product_service_enable: DataTypes.BOOLEAN,
+            sector_industry: DataTypes.FLOAT,
+            sector_industry_enable: DataTypes.BOOLEAN,
+            sector_industry_subdomains: DataTypes.FLOAT,
+            sector_industry_subdomains_enable: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE
             }
