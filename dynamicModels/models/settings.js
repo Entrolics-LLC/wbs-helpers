@@ -70,6 +70,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            preferred_org: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
             },
