@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             files: DataTypes.ARRAY(DataTypes.STRING),
             chart_meta_data: DataTypes.JSONB,
             table_name: DataTypes.STRING,
+            answer_session_id: DataTypes.STRING,
             total_count: DataTypes.INTEGER,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
