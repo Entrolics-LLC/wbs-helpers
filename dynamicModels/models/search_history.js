@@ -26,6 +26,11 @@ module.exports = (sequelize, DataTypes, schema) => {
             table_name: DataTypes.STRING,
             answer_session_id: DataTypes.STRING,
             total_count: DataTypes.INTEGER,
+            error_response:DataTypes.STRING,
+            is_error: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
