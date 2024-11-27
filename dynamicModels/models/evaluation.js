@@ -3,12 +3,12 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class EvaluationHistory extends Model {
+    class Evaluation extends Model {
         static associate(models) {
             // define association here
         }
     }
-    EvaluationHistory.init(
+    Evaluation.init(
         {
             id: {
                 type: DataTypes.STRING,
@@ -31,11 +31,11 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_search_evaluation_history`,
-            tableName: 'search_evaluation_history',
+            modelName: `${schema}_evaluation`,
+            tableName: 'evaluation',
             schema,
             createdAt: false,
             updatedAt: false
         })
-    return EvaluationHistory;
+    return Evaluation;
 };
