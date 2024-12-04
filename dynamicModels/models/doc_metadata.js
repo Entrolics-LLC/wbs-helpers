@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             version: DataTypes.STRING,
             doc_created_date: DataTypes.STRING,
             doc_published_date: DataTypes.STRING,
-            doc_author: DataTypes.STRING,
+            doc_author: DataTypes.STRING(100000),
             publisher: DataTypes.STRING,
             submitted_to: DataTypes.STRING,
             topics: DataTypes.STRING(100000),
