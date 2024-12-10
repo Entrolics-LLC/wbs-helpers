@@ -43,6 +43,9 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            cancelled_at: {
+                type: DataTypes.DATE
+            },
             expiry_at: {
                 type: DataTypes.DATE
             },
