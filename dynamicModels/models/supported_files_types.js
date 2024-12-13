@@ -10,7 +10,11 @@ module.exports = (sequelize, DataTypes, schema) => {
     }
     SupportedFileTypes.init(
         {
-            s_no: DataTypes.INTEGER,
+            s_no: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                allowNull: false
+            },
             type: DataTypes.STRING,
             size: DataTypes.INTEGER,
             is_deleted: {
