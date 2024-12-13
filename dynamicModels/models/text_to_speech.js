@@ -26,7 +26,6 @@ module.exports = (sequelize, DataTypes, schema) => {
             customization: DataTypes.JSONB,
             session_name: DataTypes.STRING(1000),
             audio_file_url: DataTypes.STRING,
-            status: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
@@ -40,8 +39,8 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_texttospeech`,
-            tableName: 'texttospeech',
+            modelName: `${schema}_text_to_speech`,
+            tableName: 'text_to_speech',
             schema,
             createdAt: false,
             updatedAt: false
