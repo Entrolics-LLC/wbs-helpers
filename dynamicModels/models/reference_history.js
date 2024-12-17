@@ -25,7 +25,6 @@ module.exports = (sequelize, DataTypes, schema) => {
             domain: DataTypes.ARRAY(DataTypes.STRING),
             filter_domains: DataTypes.ARRAY(DataTypes.STRING),
             uploaded_date: { type: DataTypes.DATE },
-            extracted_entities: DataTypes.JSONB,
             es_confidence: DataTypes.FLOAT,
             is_deleted: DataTypes.BOOLEAN,
             file_id: DataTypes.STRING,

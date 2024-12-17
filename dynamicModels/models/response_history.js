@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             feedback: DataTypes.STRING,
             rating: DataTypes.INTEGER,
             is_deleted: DataTypes.BOOLEAN,
+            extracted_entities: DataTypes.JSONB,
             created_at: {
                 type: DataTypes.DATE
             }
