@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             answer_session_id: DataTypes.STRING,
             total_count: DataTypes.INTEGER,
             error_response:DataTypes.STRING,
+            extracted_entities: DataTypes.JSONB,
             is_error: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
