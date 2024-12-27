@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             file_id: DataTypes.UUID,
-            user_id: DataTypes.UUID,
+            user_id: DataTypes.STRING,
             type_id: DataTypes.UUID,
             file_name: DataTypes.STRING,
             values: DataTypes.STRING,
