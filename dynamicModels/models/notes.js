@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class TextToSpeech extends Model {
+    class Notes extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    TextToSpeech.init(
+    Notes.init(
         {
             id: {
                 type: DataTypes.STRING,
@@ -22,13 +22,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             user_id: DataTypes.STRING,
             session_id: DataTypes.STRING,
-            type: DataTypes.STRING,
-            customization: DataTypes.JSONB,
-            session_name: DataTypes.STRING(1000),
-            audio_file_url: DataTypes.STRING,
-            file_properties: DataTypes.JSONB,
-            source: DataTypes.ARRAY(DataTypes.STRING(1098765)),
-            shared_with: DataTypes.ARRAY(DataTypes.STRING),
+            note: DataTypes.STRING(1098765),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
@@ -42,11 +36,11 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_text_to_speech`,
-            tableName: 'text_to_speech',
+            modelName: `${schema}_notes`,
+            tableName: 'notes',
             schema,
             createdAt: false,
             updatedAt: false
         });
-    return TextToSpeech;
+    return Notes;
 };
