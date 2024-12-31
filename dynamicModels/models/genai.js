@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class GENAI extends Model {
+    class Genai extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    GENAI.init(
+    Genai.init(
         {
             id: {
                 type: DataTypes.UUID,
@@ -48,5 +48,5 @@ module.exports = (sequelize, DataTypes, schema) => {
             createdAt: false,
             updatedAt: false
         })
-    return GENAI;
+    return Genai;
 }

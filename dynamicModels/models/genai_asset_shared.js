@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class GENAI_ASSET_SHARED extends Model {
+    class GenaiAssetShared extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    GENAI_ASSET_SHARED.init(
+    GenaiAssetShared.init(
         {
             id: {
                 type: DataTypes.UUID,
@@ -37,5 +37,5 @@ module.exports = (sequelize, DataTypes, schema) => {
             createdAt: false,
             updatedAt: false
         })
-    return GENAI_ASSET_SHARED;
+    return GenaiAssetShared;
 }
