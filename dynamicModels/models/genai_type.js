@@ -1,0 +1,44 @@
+'use strict';
+const {
+    Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes, schema) => {
+    class GENAI_TYPE extends Model {
+        /**
+         * Helper method for defining associations.
+         * This method is not a part of Sequelize lifecycle.
+         * The `models/index` file will call this method automatically.
+         */
+        static associate(models) {
+            // define association here
+        }
+    }
+    GENAI_TYPE.init(
+        {
+            id: {
+                type: DataTypes.UUID,
+                primaryKey: true,
+                allowNull: false
+            },
+            type: DataTypes.STRING(255),
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            created_at: {
+                type: DataTypes.DATE
+            },
+            updated_at: {
+                type: DataTypes.DATE
+            }
+        },
+        {
+            sequelize,
+            modelName: `${schema}_genai_type`,
+            tableName: 'genai_type',
+            schema,
+            createdAt: false,
+            updatedAt: false
+        })
+    return GENAI_TYPE;
+}
