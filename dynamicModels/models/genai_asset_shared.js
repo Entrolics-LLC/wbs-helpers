@@ -16,12 +16,12 @@ module.exports = (sequelize, DataTypes, schema) => {
     GenaiAssetShared.init(
         {
             id: {
-                type: DataTypes.UUID,
+                type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
-            user_id: DataTypes.UUID,
-            genai_id: DataTypes.UUID,
+            user_id: DataTypes.STRING,
+            genai_id: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
             },

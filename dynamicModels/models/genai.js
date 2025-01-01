@@ -16,13 +16,13 @@ module.exports = (sequelize, DataTypes, schema) => {
     Genai.init(
         {
             id: {
-                type: DataTypes.UUID,
+                type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
-            user_id: DataTypes.UUID,
-            genai_output_data_id: DataTypes.UUID,
-            genai_type_id: DataTypes.UUID,
+            user_id: DataTypes.STRING,
+            genai_output_data_id: DataTypes.STRING,
+            genai_type_id: DataTypes.STRING,
             name: DataTypes.STRING(55),
             description: DataTypes.STRING(8192),
             status: DataTypes.STRING(255),

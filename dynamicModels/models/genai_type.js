@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes, schema) => {
     GenaiType.init(
         {
             id: {
-                type: DataTypes.UUID,
+                type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
@@ -24,6 +24,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
+            },
+            is_enabled: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: true
             },
             created_at: {
                 type: DataTypes.DATE

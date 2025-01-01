@@ -16,11 +16,11 @@ module.exports = (sequelize, DataTypes, schema) => {
     GenaiContentSource.init(
         {
             id: {
-                type: DataTypes.UUID,
+                type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
-            genai_id: DataTypes.UUID,
+            genai_id: DataTypes.STRING,
             source_type: DataTypes.STRING(255),
             source: DataTypes.STRING(255),
             is_deleted: {
@@ -36,8 +36,8 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_genai_content_sources`,
-            tableName: 'genai_content_sources',
+            modelName: `${schema}_genai_content_source`,
+            tableName: 'genai_content_source',
             schema,
             createdAt: false,
             updatedAt: false
