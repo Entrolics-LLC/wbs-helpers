@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes, schema) => {
     DocMetaDataTypes.init(
         {
             id: {
-                type: DataTypes.UUID,
+                type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },

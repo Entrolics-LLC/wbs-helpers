@@ -12,13 +12,13 @@ module.exports = (sequelize, DataTypes, schema) => {
     DocumentMetaData.init(
         {
             id: {
-                type: DataTypes.UUID,
+                type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
-            file_id: DataTypes.UUID,
-            user_id: DataTypes.UUID,
-            type_id: DataTypes.UUID,
+            file_id: DataTypes.STRING,
+            user_id: DataTypes.STRING,
+            type_id: DataTypes.STRING,
             file_name: DataTypes.STRING,
             values: DataTypes.STRING,
             created_at: {
