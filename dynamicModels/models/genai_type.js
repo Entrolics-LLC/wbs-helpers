@@ -28,12 +28,6 @@ module.exports = (sequelize, DataTypes, schema) => {
             is_enabled: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: true
-            },
-            created_at: {
-                type: DataTypes.DATE
-            },
-            updated_at: {
-                type: DataTypes.DATE
             }
         },
         {
