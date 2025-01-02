@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
-            name: DataTypes.STRING(55),
+            name: DataTypes.STRING(255),
             size: DataTypes.INTEGER,
             length: DataTypes.INTEGER,
             mime_type: DataTypes.STRING(255),
