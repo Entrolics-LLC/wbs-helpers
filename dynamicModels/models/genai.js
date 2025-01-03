@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             user_id: DataTypes.STRING,
             genai_output_data_id: DataTypes.STRING,
             genai_type_id: DataTypes.STRING,
-            name: DataTypes.STRING(55),
+            name: DataTypes.STRING(255),
             description: DataTypes.STRING(8192),
             status: DataTypes.STRING(255),
             completed_at: {
