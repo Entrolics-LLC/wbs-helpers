@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class GenaiOutputData extends Model {
+    class GenaiInputData extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    GenaiOutputData.init(
+    GenaiInputData.init(
         {
             id: {
                 type: DataTypes.STRING,
@@ -21,16 +21,14 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             genai_id: DataTypes.STRING,
-            name: DataTypes.STRING(255),
-            size: DataTypes.INTEGER,
-            length: DataTypes.INTEGER,
-            mime_type: DataTypes.STRING(255),
+            type_id: DataTypes.STRING,
+            host_name: DataTypes.STRING(255),
+            guest_name: DataTypes.STRING(255),
+            host_voice: DataTypes.STRING(255),
+            guest_voice: DataTypes.STRING(255),
+            audio_model: DataTypes.STRING(255),
             url: DataTypes.STRING(255),
-            content: DataTypes.STRING(8192),
-            is_deleted: {
-                type: DataTypes.BOOLEAN,
-                defaultValue: false
-            },
+            additional_notes: DataTypes.STRING(8192),
             created_at: {
                 type: DataTypes.DATE
             },
@@ -40,11 +38,11 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_genai_output_data`,
-            tableName: 'genai_output_data',
+            modelName: `${schema}_genai_input_data`,
+            tableName: 'genai_input_data',
             schema,
             createdAt: false,
             updatedAt: false
         })
-    return GenaiOutputData;
+    return GenaiInputData;
 }
