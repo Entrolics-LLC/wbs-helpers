@@ -21,13 +21,15 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             genai_id: DataTypes.STRING,
+            output_id: DataTypes.STRING,
             type_id: DataTypes.STRING,
             host_name: DataTypes.STRING(255),
             guest_name: DataTypes.STRING(255),
             host_voice: DataTypes.STRING(255),
             guest_voice: DataTypes.STRING(255),
-            audio_model: DataTypes.STRING(255),
+            model: DataTypes.STRING(255),
             url: DataTypes.STRING(255),
+            question: DataTypes.STRING(255),
             version_number: DataTypes.INTEGER,
             additional_notes: DataTypes.STRING(8192),
             created_at: {
