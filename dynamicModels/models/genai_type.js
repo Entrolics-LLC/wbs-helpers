@@ -20,7 +20,11 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
+            serial_number: DataTypes.INTEGER,
+            title: DataTypes.STRING(255),
             type: DataTypes.STRING(255),
+            description: DataTypes.STRING(8222),
+            icon: DataTypes.STRING(255),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
