@@ -21,12 +21,12 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             user_id: DataTypes.STRING,
-            genai_output_data_id: DataTypes.STRING,
+            genai_output_data_id: DataTypes.STRING, //delete column later
             genai_type_id: DataTypes.STRING,
             name: DataTypes.STRING(255),
             description: DataTypes.STRING(8192),
-            status: DataTypes.STRING(255),
-            completed_at: {
+            status: DataTypes.STRING(255), //delete column later
+            completed_at: { //delete column later
                 type: DataTypes.DATE
             },
             is_deleted: {
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             created_at: {
                 type: DataTypes.DATE
             },
-            updated_at: {
+            updated_at: { //delete column later
                 type: DataTypes.DATE
             }
         },
