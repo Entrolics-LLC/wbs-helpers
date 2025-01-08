@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             mime_type: DataTypes.STRING(255),
             url: DataTypes.STRING(255),
             content: DataTypes.STRING(8192),
+            version_number: DataTypes.INTEGER,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false

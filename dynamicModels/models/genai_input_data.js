@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             guest_voice: DataTypes.STRING(255),
             audio_model: DataTypes.STRING(255),
             url: DataTypes.STRING(255),
+            version_number: DataTypes.INTEGER,
             additional_notes: DataTypes.STRING(8192),
             created_at: {
                 type: DataTypes.DATE
