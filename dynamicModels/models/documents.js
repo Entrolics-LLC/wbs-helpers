@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             parser: DataTypes.STRING,
             dag_run_id: DataTypes.STRING,
             proposal_id: DataTypes.STRING,
+            file_status_id: DataTypes.STRING,
             chat_custom_inst_id: DataTypes.STRING,
             error: DataTypes.STRING(1098765),
             status: DataTypes.ARRAY(DataTypes.STRING),
