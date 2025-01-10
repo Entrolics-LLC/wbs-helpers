@@ -25,6 +25,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             genai_type_id: DataTypes.STRING,
             name: DataTypes.STRING(255),
             description: DataTypes.STRING(8192),
+            session_id: DataTypes.STRING,
             status: DataTypes.STRING(255), //delete column later
             completed_at: { //delete column later
                 type: DataTypes.DATE
