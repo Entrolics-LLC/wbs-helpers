@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             genai_output_id: DataTypes.STRING,
             source_type: DataTypes.STRING(255),
-            source: DataTypes.STRING(255),
+            source: DataTypes.STRING(8192),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
