@@ -26,10 +26,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             length: DataTypes.INTEGER,
             mime_type: DataTypes.STRING(255),
             url: DataTypes.STRING(255),
-            content: DataTypes.STRING(8192),
+            content: DataTypes.STRING(1098765),
             input_id: DataTypes.STRING,
             title: DataTypes.STRING(255),
-            description: DataTypes.STRING(8192),
+            description: DataTypes.STRING(1098765),
             version_number: DataTypes.INTEGER,
             status: DataTypes.STRING,
             is_deleted: {
