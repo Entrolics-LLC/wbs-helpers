@@ -25,6 +25,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             type: DataTypes.STRING(255),
             description: DataTypes.STRING(8222),
             icon: DataTypes.STRING(255),
+            is_default_favorite: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_conversation_view: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
