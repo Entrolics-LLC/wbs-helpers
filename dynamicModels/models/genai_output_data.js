@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             url: DataTypes.STRING(255),
             content: DataTypes.STRING(1098765),
             input_id: DataTypes.STRING,
-            title: DataTypes.STRING(255),
+            title: DataTypes.STRING(8675),
             description: DataTypes.STRING(1098765),
             version_number: DataTypes.INTEGER,
             status: DataTypes.STRING,
