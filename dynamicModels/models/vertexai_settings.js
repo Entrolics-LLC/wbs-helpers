@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             relevance: DataTypes.FLOAT,
             recency_boost: DataTypes.FLOAT,
             recency_boost_enable: DataTypes.BOOLEAN,
+            intent_detection: DataTypes.BOOLEAN,
             entity_person_boost: DataTypes.FLOAT,
             entity_person_boost_enable: DataTypes.BOOLEAN,
             entity_org_boost: DataTypes.FLOAT,
