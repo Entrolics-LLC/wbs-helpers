@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             genai_id: DataTypes.STRING,
-            name: DataTypes.STRING(255),
+            name: DataTypes.STRING(8192),
             size: DataTypes.INTEGER,
             length: DataTypes.INTEGER,
             mime_type: DataTypes.STRING(255),
