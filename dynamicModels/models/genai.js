@@ -23,8 +23,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             user_id: DataTypes.STRING,
             genai_output_data_id: DataTypes.STRING, //delete column later
             genai_type_id: DataTypes.STRING,
-            name: DataTypes.STRING(255),
-            description: DataTypes.STRING(8192),
+            name: DataTypes.STRING(8192),
+            description: DataTypes.STRING(82192),
             session_id: DataTypes.STRING,
             is_main_search: {
                 type: DataTypes.BOOLEAN,
