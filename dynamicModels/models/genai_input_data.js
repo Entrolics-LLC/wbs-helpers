@@ -28,10 +28,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             guest_voice: DataTypes.STRING(255),
             model: DataTypes.STRING(255),
             url: DataTypes.STRING(255),
-            question: DataTypes.STRING(255),
+            question: DataTypes.STRING(8985),
             version_number: DataTypes.INTEGER,
             image_size: DataTypes.STRING,
-            additional_notes: DataTypes.STRING(8192),
+            additional_notes: DataTypes.STRING(89192),
             created_at: {
                 type: DataTypes.DATE
             },
