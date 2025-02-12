@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             file_id: DataTypes.STRING,
             user_id: DataTypes.STRING,
             type_id: DataTypes.STRING,
-            file_name: DataTypes.STRING,
+            file_name: DataTypes.STRING(4096),
             values: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
