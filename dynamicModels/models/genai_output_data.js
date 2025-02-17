@@ -30,6 +30,9 @@ module.exports = (sequelize, DataTypes, schema) => {
             input_id: DataTypes.STRING,
             title: DataTypes.STRING(8675),
             description: DataTypes.STRING(1098765),
+            research_steps: DataTypes.STRING(8675),
+            data_source: DataTypes.STRING(1098765),
+            proposal_follow_up: DataTypes.STRING(8675),
             version_number: DataTypes.INTEGER,
             status: DataTypes.STRING,
             is_deleted: {
