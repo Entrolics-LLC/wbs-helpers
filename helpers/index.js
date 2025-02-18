@@ -11,7 +11,8 @@ var jwt = require('jwt-simple')
 const isNull = require('./isNull')
 const codes = require('./codes.json')
 const { runQuery, runQueryWithReplacements } = require('./postgresQueries')
-
+const { SecretManagerServiceClient } = require('@google-cloud/secret-manager')
+const secretManagerClient = new SecretManagerServiceClient()
 const getGoogleFlow = (name, service_key) => (
     new Promise(async (resolve, reject) => {
         try {
@@ -177,93 +178,6 @@ const getAuthS3Url = async (uri, storage) => {
 }
 
 const validateData = (data) => data ? "'" + data?.replace?.(/'|"/gi, '') + "'" : null
-
-// const emailText = (user) => {
-//     const msg = {
-//         to: user.email,
-//         from: 'entrollics@gmail.com',
-//         subject: 'Verify Your Email',
-//         text: `Hello ${user.first_name},
-//         <br/>
-//         <br/>
-//         To complete your signup to Context, Please verify your email by clicking the link below:
-//         <br />
-//         <br />
-//         ${origin}/emailverification/${user.token}
-//         <br />
-//         <br />
-//         Alternatively, you can copy the link to your browser's address bar.
-//         <br />
-//         <br />
-//         If you don't use this link within 1 day, the link will be expired.
-//         Best regards,
-//         <br/>
-//         Context.
-//         `,
-//         html: `Hello ${user.first_name},
-//         <br/>
-//         <br/>
-//         To complete your signup to Context, Please verify your email by clicking the link below:
-//         <br />
-//         <br />
-//         ${origin}/emailverification/${user.token}
-//         <br />
-//         <br />
-//         Alternatively, you can copy the link to your browser's address bar.
-//         <br />
-//         <br />
-//         If you don't use this link within 1 day, the link will be expired.
-//         Best regards,
-//         <br/>
-//         Context.`
-//     }
-
-//     transporter.sendMail(msg)
-// }
-
-// const forgotEmail = (user) => {
-//     const msg = {
-//         to: user.email,
-//         from: 'entrollics@gmail.com',
-//         subject: 'Update your password',
-//         text: `Hello ${user.first_name},
-//         <br/>
-//         <br/>
-//         To update your password, Please click the link below:
-//         <br />
-//         <br />
-//         ${origin}/update-password/${user.token}
-//         <br />
-//         <br />
-//         Alternatively, you can copy the link to your browser's address bar.
-//         <br />
-//         <br />
-//         If you don't use this link within 2 days, the link will be expired.
-//         Best regards,
-//         <br/>
-//         Context.
-//         `,
-//         html: `Hello ${user.first_name},
-//         <br/>
-//         <br/>
-//         To update your password, Please click the link below:
-//         <br />
-//         <br />
-//         ${origin}/update-password/${user.token}
-//         <br />
-//         <br />
-//         Alternatively, you can copy the link to your browser's address bar.
-//         <br />
-//         <br />
-//         If you don't use this link within 2 days, the link will be expired.
-//         Best regards,
-//         <br/>
-//         Context.
-//         `
-//     }
-
-//     transporter.sendMail(msg)
-// }
 
 const updateToken = async (id, db) => {
     try {
@@ -844,6 +758,26 @@ const trimWhitespaceEnv = (input) => {
     else return input;
 }
 
+const getSecretValues = async (secretName) => {
+    try {
+        const projectId = process.env.project_id;
+        if (!projectId) {
+            console.error('Missing environment variable: project_id');
+            process.exit(1)
+        }
+        const [version] = await secretManagerClient.accessSecretVersion({
+            name: `projects/${projectId}/secrets/${secretName}/versions/latest`,
+        });
+        return version.payload?.data?.toString() || ''
+    } catch (error) {
+        console.error(
+            `Secret ${secretName} not found in environment variables & could not be fetched from Secret Manager`,
+            error,
+        );
+        process.exit(1)
+    }
+}
+
 module.exports = {
     runQuery,
     parseVideoData,
@@ -882,5 +816,6 @@ module.exports = {
     validateFields,
     getAuthS3Url,
     runQueryWithReplacements,
-    trimWhitespaceEnv
+    trimWhitespaceEnv,
+    getSecretValues
 }
