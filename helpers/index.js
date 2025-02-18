@@ -758,23 +758,19 @@ const trimWhitespaceEnv = (input) => {
     else return input;
 }
 
-const getSecretValues = async (secretName) => {
+const getSecretValues = async (secretName, projectId) => {
     try {
-        const projectId = process.env.project_id;
         if (!projectId) {
-            console.error('Missing environment variable: project_id');
-            process.exit(1)
+            console.log('Missing environment variable: project_id');
+            throw new Error('Missing environment variable: project_id')
         }
         const [version] = await secretManagerClient.accessSecretVersion({
             name: `projects/${projectId}/secrets/${secretName}/versions/latest`,
         });
         return version.payload?.data?.toString() || ''
     } catch (error) {
-        console.error(
-            `Secret ${secretName} not found in environment variables & could not be fetched from Secret Manager`,
-            error,
-        );
-        process.exit(1)
+        console.log(`Secret ${secretName} not found in environment variables & could not be fetched from Secret Manager`, error);
+        throw new Error(`Secret ${secretName} not found in environment variables & could not be fetched from Secret Manager`, error);
     }
 }
 
