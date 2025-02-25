@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             total_tokens: DataTypes.INTEGER,
             model_name: DataTypes.STRING,
             status: DataTypes.STRING,
-            isNearingLimit: {
+            is_nearing_limit: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
