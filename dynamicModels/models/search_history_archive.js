@@ -1,0 +1,60 @@
+'use strict';
+const {
+    Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes, schema) => {
+    class SearchHistoryArchive extends Model {
+        static associate(models) {
+            // define association here
+        }
+    }
+    SearchHistoryArchive.init(
+        {
+            id: {
+                type: DataTypes.STRING,
+                primaryKey: true,
+                allowNull: false
+            },
+            user_id: DataTypes.STRING,
+            session_id: DataTypes.STRING,
+            question: DataTypes.STRING(1098765),
+            answer: DataTypes.STRING(1098765),
+            filter_domains: DataTypes.ARRAY(DataTypes.STRING),
+            recommended_questions: DataTypes.ARRAY(DataTypes.STRING),
+            files: DataTypes.ARRAY(DataTypes.STRING),
+            chart_meta_data: DataTypes.JSONB,
+            table_name: DataTypes.STRING,
+            answer_session_id: DataTypes.STRING,
+            total_count: DataTypes.INTEGER,
+            error_response:DataTypes.STRING,
+            extracted_entities: DataTypes.JSONB,
+            is_error: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            created_at_original: {
+                type: DataTypes.DATE,
+                allowNull: false
+            },
+            created_at: {
+                type: DataTypes.DATE,
+            },
+            updated_at: {
+                type: DataTypes.DATE,
+                allowNull: true
+            }
+        },
+        {
+            sequelize,
+            modelName: `${schema}_search_history_archive`,
+            tableName: 'search_history_archive',
+            schema,
+            createdAt: false,
+            updatedAt: false
+        });
+    return SearchHistoryArchive;
+};
