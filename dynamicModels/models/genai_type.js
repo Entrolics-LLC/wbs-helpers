@@ -25,6 +25,14 @@ module.exports = (sequelize, DataTypes, schema) => {
             type: DataTypes.STRING(255),
             description: DataTypes.STRING(8222),
             icon: DataTypes.STRING(255),
+            generate_prompt: DataTypes.STRING(8222),
+            regeneration_prompt: DataTypes.STRING(8222),
+            follow_up_prompt: DataTypes.STRING(8222),
+            classification_prompt: DataTypes.STRING(8222),
+            proposal_prompt: DataTypes.STRING(8222),
+            plan_prompt: DataTypes.STRING(8222),
+            icon_alt: DataTypes.STRING,
+            tag_line: DataTypes.STRING,
             is_default_favorite: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
