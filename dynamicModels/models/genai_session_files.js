@@ -26,9 +26,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             file_type: DataTypes.STRING,
             file_size: DataTypes.INTEGER,
             gs_url: DataTypes.STRING,
-            status: DataTypes.STRING, 
+            status: DataTypes.STRING,
             is_selected: {
-                type: DataTypes.DATE
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
             },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
