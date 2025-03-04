@@ -21,14 +21,16 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             genai_id: DataTypes.STRING,
-            prompt_tokens: DataTypes.INTEGER,
-            completion_tokens: DataTypes.INTEGER,
-            total_tokens: DataTypes.INTEGER,
+            used_tokens: DataTypes.INTEGER,
+            tokens_limit: DataTypes.INTEGER,
             model_name: DataTypes.STRING,
             status: DataTypes.STRING,
             is_nearing_limit: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
+            },
+            updated_at: {
+                type: DataTypes.DATE
             },
             created_at: {
                 type: DataTypes.DATE
