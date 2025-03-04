@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             genai_id: DataTypes.STRING,
             used_tokens: DataTypes.INTEGER,
-            tokens_limit: DataTypes.INTEGER,
+            token_limit: DataTypes.INTEGER,
             model_name: DataTypes.STRING,
             status: DataTypes.STRING,
             is_nearing_limit: {
