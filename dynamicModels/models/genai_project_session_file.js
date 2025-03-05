@@ -3,7 +3,7 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes, schema) => {
-    class GenaiSessionFile extends Model {
+    class GenaiProjectSessionFile extends Model {
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             // define association here
         }
     }
-    GenaiSessionFile.init(
+    GenaiProjectSessionFile.init(
         {
             id: {
                 type: DataTypes.STRING,
@@ -27,6 +27,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             file_size: DataTypes.INTEGER,
             gs_url: DataTypes.STRING,
             status: DataTypes.STRING,
+            size_bytes: DataTypes.INTEGER,
+            token_count: DataTypes.INTEGER,
             is_selected: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
@@ -35,17 +37,20 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            updated_at: {
+                type: DataTypes.DATE
+            },
             created_at: {
                 type: DataTypes.DATE
             }
         },
         {
             sequelize,
-            modelName: `${schema}_genai_session_files`,
-            tableName: 'genai_session_files',
+            modelName: `${schema}_genai_project_session_file`,
+            tableName: 'genai_project_session_file',
             schema,
             createdAt: false,
             updatedAt: false
         })
-    return GenaiSessionFile;
+    return GenaiProjectSessionFile;
 }
