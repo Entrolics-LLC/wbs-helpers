@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             name: DataTypes.STRING(8192),
             description: DataTypes.STRING(82192),
             session_id: DataTypes.STRING,
+            project_id: DataTypes.STRING,
             is_main_search: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: true

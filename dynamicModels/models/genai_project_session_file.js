@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             status: DataTypes.STRING,
             size_bytes: DataTypes.INTEGER,
             token_count: DataTypes.INTEGER,
+            project_id: DataTypes.STRING,
             is_selected: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
