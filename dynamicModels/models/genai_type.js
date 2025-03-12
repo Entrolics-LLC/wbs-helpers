@@ -31,12 +31,6 @@ module.exports = (sequelize, DataTypes, schema) => {
             classification_prompt: DataTypes.STRING(8222),
             proposal_prompt: DataTypes.STRING(8222),
             plan_prompt: DataTypes.STRING(8222),
-            icon_alt: DataTypes.STRING,
-            tag_line: DataTypes.STRING,
-            is_default_favorite: {
-                type: DataTypes.BOOLEAN,
-                defaultValue: false
-            },
             is_conversation_view: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
