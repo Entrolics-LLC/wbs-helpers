@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             genai_type_id: DataTypes.STRING,
             model_id: DataTypes.STRING,
-            generate_prompt: DataTypes.STRING(8222),
+            additional_prompt: DataTypes.STRING(8222),
+            // generate_prompt: DataTypes.STRING(8222),
             is_default: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false

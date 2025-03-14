@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             genai_id: DataTypes.STRING,
             file_name: DataTypes.STRING(8192),
             file_type: DataTypes.STRING,
-            file_size: DataTypes.INTEGER,
+            file_size: DataTypes.INTEGER, //extra column 
             gs_url: DataTypes.STRING,
             status: DataTypes.STRING,
             size_bytes: DataTypes.INTEGER,

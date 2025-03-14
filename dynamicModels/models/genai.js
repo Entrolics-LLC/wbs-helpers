@@ -21,19 +21,13 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             user_id: DataTypes.STRING,
-            genai_output_data_id: DataTypes.STRING, //delete column later
             genai_type_id: DataTypes.STRING,
             name: DataTypes.STRING(8192),
-            description: DataTypes.STRING(82192),
             session_id: DataTypes.STRING,
             project_id: DataTypes.STRING,
             is_main_search: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: true
-            },
-            status: DataTypes.STRING(255), //delete column later
-            completed_at: { //delete column later
-                type: DataTypes.DATE
             },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
