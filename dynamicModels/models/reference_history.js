@@ -31,6 +31,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             content_type: DataTypes.STRING,
             meta: DataTypes.JSONB,
             struct_data: DataTypes.JSONB,
+            custom_extractive_segments: DataTypes.JSONB,
             created_at: {
                 type: DataTypes.DATE
             }
