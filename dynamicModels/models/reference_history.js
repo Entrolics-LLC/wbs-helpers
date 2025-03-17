@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             file_id: DataTypes.STRING,
             content_type: DataTypes.STRING,
             meta: DataTypes.JSONB,
+            struct_data: DataTypes.JSONB,
             created_at: {
                 type: DataTypes.DATE
             }
