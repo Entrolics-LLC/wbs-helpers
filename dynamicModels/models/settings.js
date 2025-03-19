@@ -70,7 +70,6 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
-            filters: DataTypes.ARRAY(DataTypes.STRING),
             preferred_org: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
