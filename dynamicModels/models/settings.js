@@ -70,6 +70,14 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            is_excerpts: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            is_history: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             preferred_org: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
