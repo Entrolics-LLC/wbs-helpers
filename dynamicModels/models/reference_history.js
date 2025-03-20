@@ -28,6 +28,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             es_confidence: DataTypes.FLOAT,
             is_deleted: DataTypes.BOOLEAN,
             file_id: DataTypes.STRING,
+            score: DataTypes.INTEGER,
             content_type: DataTypes.STRING,
             meta: DataTypes.JSONB,
             struct_data: DataTypes.JSONB,
