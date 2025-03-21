@@ -27,8 +27,12 @@ module.exports = (sequelize, DataTypes, schema) => {
             uploaded_date: { type: DataTypes.DATE },
             es_confidence: DataTypes.FLOAT,
             is_deleted: DataTypes.BOOLEAN,
+            is_summary: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             file_id: DataTypes.STRING,
-            score: DataTypes.INTEGER,
+            score: DataTypes.FLOAT,
             content_type: DataTypes.STRING,
             meta: DataTypes.JSONB,
             struct_data: DataTypes.JSONB,
