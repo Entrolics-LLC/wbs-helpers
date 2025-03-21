@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             size_bytes: DataTypes.INTEGER,
             token_count: DataTypes.INTEGER,
             project_id: DataTypes.STRING,
+            di_document_id: DataTypes.STRING,
             is_selected: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
