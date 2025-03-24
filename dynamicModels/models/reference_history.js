@@ -32,7 +32,6 @@ module.exports = (sequelize, DataTypes, schema) => {
                 defaultValue: false
             },
             file_id: DataTypes.STRING,
-            score: DataTypes.FLOAT,
             content_type: DataTypes.STRING,
             meta: DataTypes.JSONB,
             struct_data: DataTypes.JSONB,
