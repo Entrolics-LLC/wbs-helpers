@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             genai_id: DataTypes.STRING,
             type_id: DataTypes.STRING,
+            custom_instruction_id: DataTypes.STRING,
             host_name: DataTypes.STRING(255),
             guest_name: DataTypes.STRING(255),
             host_voice: DataTypes.STRING(255),
