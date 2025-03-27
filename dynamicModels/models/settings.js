@@ -78,6 +78,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             updated_at: {
                 type: DataTypes.DATE
             },
+            enable_sources: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
         },
         {
             sequelize,
