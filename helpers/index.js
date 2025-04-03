@@ -699,6 +699,26 @@ const trimWhitespaceEnv = (input) => {
     else return input;
 }
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const retryWithBackoff = async () => (fn, maxAttempts = Infinity, initialDelayMs = 2000, maxDelayMs = 60000) {
+    let attempts = 0;
+
+    while (true) {
+        try {
+            return await fn(); // Try executing the function
+        } catch (error) {
+            attempts++;
+            const delayTime = Math.min(initialDelayMs * Math.pow(2, attempts) + Math.random() * 1000, maxDelayMs);
+            console.error(`Attempt ${attempts} failed: ${error.message}. Retrying in ${delayTime / 1000}s...`);
+            await delay(delayTime); // Wait before retrying
+            if (maxAttempts && attempts >= maxAttempts) {
+                throw new Error(`Failed after ${attempts} attempts: ${error.message}`);
+            }
+        }
+    }
+}
+
 module.exports = {
     runQuery,
     parseVideoData,
@@ -734,5 +754,6 @@ module.exports = {
     validateFields,
     getAuthS3Url,
     runQueryWithReplacements,
-    trimWhitespaceEnv
+    trimWhitespaceEnv,
+    retryWithBackoff
 }
