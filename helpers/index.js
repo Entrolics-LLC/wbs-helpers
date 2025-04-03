@@ -701,7 +701,7 @@ const trimWhitespaceEnv = (input) => {
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const retryWithBackoff = async () => (fn, maxAttempts = Infinity, initialDelayMs = 2000, maxDelayMs = 60000) {
+const retryWithBackoff = async (fn, maxAttempts = Infinity, initialDelayMs = 2000, maxDelayMs = 60000) => {
     let attempts = 0;
 
     while (true) {
