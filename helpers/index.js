@@ -3,9 +3,7 @@ const axios = require('axios')
 const Fuse = require('fuse.js')
 const _ = require('lodash')
 const scheduler = require('@google-cloud/scheduler')
-const { DocumentProcessorServiceClient } = require('@google-cloud/documentai').v1beta3
 const { WorkflowsClient, ExecutionsClient } = require('@google-cloud/workflows')
-const Vision = require('@google-cloud/vision')
 const moment = require('moment')
 var jwt = require('jwt-simple')
 const isNull = require('./isNull')
@@ -44,62 +42,6 @@ const getGoogleFlowExecutions = (parent, service_key) => (
         }
     })
 )
-
-const imageTextDetection = (destination, service_key) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            const visionClient = new Vision.ImageAnnotatorClient({
-                projectId: service_key.project_id,
-                credentials: service_key
-            })
-            const [result] = await visionClient.textDetection(destination)
-            resolve(result)
-        }
-        catch (e) {
-            reject(e)
-        }
-    })
-}
-
-const getDocumentAIProcessorsList = (service_key, projectId) => {
-    //https://googleapis.dev/nodejs/documentai/latest/v1beta3.DocumentProcessorServiceClient.html#listProcessors
-    return new Promise(async (resolve, reject) => {
-        try {
-            const docAIParent = `projects/${projectId}/locations/us`
-            const DocAIclient = new DocumentProcessorServiceClient({
-                projectId,
-                credentials: service_key
-            })
-            let d = await DocAIclient.listProcessors({ parent: docAIParent })
-            let noNulls = d?.filter(Boolean)?.flat()
-
-            let allProcessors = noNulls?.map((d) => {
-                let processorName = d?.name
-                let processorID = processorName?.slice(processorName?.lastIndexOf('/') + 1, processorName?.length)
-                let displayName = d?.displayName
-                return { id: processorID, displayName, type: d?.type, state: d?.state }
-            })?.filter(d => Boolean(d?.id && d?.state == 'ENABLED'))
-            resolve(allProcessors)
-        }
-        catch (e) {
-            reject(e)
-        }
-    })
-}
-
-const doesDocAIProcessorExist = (processorId, projectId, service_key) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let d = await getDocumentAIProcessorsList(service_key, projectId)
-            let allProcessorIds = d?.map(d => d?.id)
-            let isExisting = allProcessorIds?.indexOf(processorId) > -1
-            resolve(isExisting)
-        }
-        catch (e) {
-            reject(e)
-        }
-    })
-}
 
 const arrayIntoBigqueryArray = (array) => ( //Convert JS Array into Bigquery Array, Use only for array of strings.
     Boolean(Array.isArray(array) && array?.length) ?
@@ -177,93 +119,6 @@ const getAuthS3Url = async (uri, storage) => {
 }
 
 const validateData = (data) => data ? "'" + data?.replace?.(/'|"/gi, '') + "'" : null
-
-// const emailText = (user) => {
-//     const msg = {
-//         to: user.email,
-//         from: 'entrollics@gmail.com',
-//         subject: 'Verify Your Email',
-//         text: `Hello ${user.first_name},
-//         <br/>
-//         <br/>
-//         To complete your signup to Context, Please verify your email by clicking the link below:
-//         <br />
-//         <br />
-//         ${origin}/emailverification/${user.token}
-//         <br />
-//         <br />
-//         Alternatively, you can copy the link to your browser's address bar.
-//         <br />
-//         <br />
-//         If you don't use this link within 1 day, the link will be expired.
-//         Best regards,
-//         <br/>
-//         Context.
-//         `,
-//         html: `Hello ${user.first_name},
-//         <br/>
-//         <br/>
-//         To complete your signup to Context, Please verify your email by clicking the link below:
-//         <br />
-//         <br />
-//         ${origin}/emailverification/${user.token}
-//         <br />
-//         <br />
-//         Alternatively, you can copy the link to your browser's address bar.
-//         <br />
-//         <br />
-//         If you don't use this link within 1 day, the link will be expired.
-//         Best regards,
-//         <br/>
-//         Context.`
-//     }
-
-//     transporter.sendMail(msg)
-// }
-
-// const forgotEmail = (user) => {
-//     const msg = {
-//         to: user.email,
-//         from: 'entrollics@gmail.com',
-//         subject: 'Update your password',
-//         text: `Hello ${user.first_name},
-//         <br/>
-//         <br/>
-//         To update your password, Please click the link below:
-//         <br />
-//         <br />
-//         ${origin}/update-password/${user.token}
-//         <br />
-//         <br />
-//         Alternatively, you can copy the link to your browser's address bar.
-//         <br />
-//         <br />
-//         If you don't use this link within 2 days, the link will be expired.
-//         Best regards,
-//         <br/>
-//         Context.
-//         `,
-//         html: `Hello ${user.first_name},
-//         <br/>
-//         <br/>
-//         To update your password, Please click the link below:
-//         <br />
-//         <br />
-//         ${origin}/update-password/${user.token}
-//         <br />
-//         <br />
-//         Alternatively, you can copy the link to your browser's address bar.
-//         <br />
-//         <br />
-//         If you don't use this link within 2 days, the link will be expired.
-//         Best regards,
-//         <br/>
-//         Context.
-//         `
-//     }
-
-//     transporter.sendMail(msg)
-// }
 
 const updateToken = async (id, db) => {
     try {
@@ -852,8 +707,6 @@ module.exports = {
     getProjectFlow,
     arrayIntoBigqueryArray,
     arrayIntoPostgresqlArray,
-    imageTextDetection,
-    getDocumentAIProcessorsList,
     createSchedule,
     setProcessingStatus,
     getUniqueArrayOfObjects,
@@ -870,7 +723,6 @@ module.exports = {
     dataToNeo4jloop,
     dlpFunction,
     graphSchemHelper,
-    doesDocAIProcessorExist,
     getGoogleFlow,
     getGoogleFlowExecutions,
     folderRecursive,
