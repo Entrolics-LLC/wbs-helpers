@@ -71,6 +71,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 defaultValue: false
             },
             filters: DataTypes.ARRAY(DataTypes.STRING),
+            selected_filters: DataTypes.ARRAY(DataTypes.STRING),
             preferred_org: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
