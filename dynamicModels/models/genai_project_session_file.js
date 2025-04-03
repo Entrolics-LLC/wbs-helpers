@@ -31,6 +31,11 @@ module.exports = (sequelize, DataTypes, schema) => {
             token_count: DataTypes.INTEGER,
             project_id: DataTypes.STRING,
             di_document_id: DataTypes.STRING,
+            is_main_search: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: true
+            },
+            tool_id: DataTypes.STRING,
             is_selected: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
