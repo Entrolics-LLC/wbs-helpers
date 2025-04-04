@@ -35,6 +35,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             proposal_follow_up: DataTypes.STRING(8675),
             version_number: DataTypes.INTEGER,
             status: DataTypes.STRING,
+            is_main_search_external_tool: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
