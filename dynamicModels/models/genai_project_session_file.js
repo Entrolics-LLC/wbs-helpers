@@ -35,6 +35,11 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            is_main_search: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: true
+            },
+            tool_id: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
