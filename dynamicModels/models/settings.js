@@ -83,6 +83,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            home_view: DataTypes.STRING,
         },
         {
             sequelize,
