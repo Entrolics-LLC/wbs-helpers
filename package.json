@@ -4,9 +4,9 @@
   "main": "index.js",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/scheduler": "^5.0.1",
+    "@google-cloud/scheduler": "3.3.1",
     "@google-cloud/storage": "^6.1.0",
-    "@google-cloud/workflows": "^4.1.0",
+    "@google-cloud/workflows": "2.3.2",
     "axios": "^1.8.4",
     "bcryptjs": "^2.4.3",
     "child_process": "^1.0.2",
