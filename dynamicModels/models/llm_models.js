@@ -24,6 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             is_home: DataTypes.BOOLEAN,
             location: DataTypes.STRING,
             system_prompt: DataTypes.STRING(1098765),
+            context_window: DataTypes.INTEGER,
             system_prompt_id: DataTypes.STRING,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
