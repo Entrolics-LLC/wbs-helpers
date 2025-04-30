@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             title: DataTypes.STRING(255),
             description: DataTypes.STRING(10485760),
             logo: DataTypes.STRING(255),
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             created_at: {
                 type: DataTypes.DATE
             },
