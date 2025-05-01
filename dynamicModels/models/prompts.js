@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
+            type: DataTypes.STRING,
             prompt: DataTypes.STRING,
             description: DataTypes.STRING(1098765),
         },
