@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             user_id: DataTypes.STRING,
             guest_id: DataTypes.STRING,
             file_name: DataTypes.STRING(4096),
+            file_title: DataTypes.STRING(4096),
             file_type: DataTypes.STRING,
             file_size: DataTypes.INTEGER,
             parser: DataTypes.STRING,
