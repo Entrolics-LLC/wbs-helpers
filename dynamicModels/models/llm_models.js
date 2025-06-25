@@ -22,6 +22,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             max_token: DataTypes.INTEGER,
             is_image_support: DataTypes.BOOLEAN,
             is_home: DataTypes.BOOLEAN,
+            is_beta: DataTypes.BOOLEAN,
+            tooltip: DataTypes.STRING(1098765),
             location: DataTypes.STRING,
             system_prompt: DataTypes.STRING(1098765),
             context_window: DataTypes.INTEGER,
