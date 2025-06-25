@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             feedback_object_id: DataTypes.STRING,
             object_reference_id: DataTypes.STRING,
             rating: DataTypes.INTEGER,
-            comment: DataTypes.STRING(8192),
+            comment: DataTypes.STRING(1098765),
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
