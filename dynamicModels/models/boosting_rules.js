@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             description: DataTypes.STRING,
             tooltip: DataTypes.STRING,
             filter_name: DataTypes.STRING,
+            created_by: DataTypes.STRING,
             is_active: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
