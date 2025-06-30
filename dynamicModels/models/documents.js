@@ -27,7 +27,6 @@ module.exports = (sequelize, DataTypes, schema) => {
             file_type: DataTypes.STRING,
             file_size: DataTypes.INTEGER,
             parser: DataTypes.STRING,
-            dag_run_id: DataTypes.STRING,
             proposal_id: DataTypes.STRING,
             file_status_id: DataTypes.STRING,
             chat_custom_inst_id: DataTypes.STRING,
