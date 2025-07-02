@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             name: DataTypes.STRING,
             user_id: DataTypes.STRING,
+            tool_id: DataTypes.STRING,
             start_prompt: DataTypes.STRING(1098765),
             end_prompt: DataTypes.STRING(1098765),
             tone: DataTypes.ARRAY(DataTypes.STRING),
