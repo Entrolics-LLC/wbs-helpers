@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             genai_type_id: DataTypes.STRING,
+            category: DataTypes.STRING,
             model_id: DataTypes.STRING,
             name: DataTypes.STRING,
             prompt: DataTypes.STRING(999999),

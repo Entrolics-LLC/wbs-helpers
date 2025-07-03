@@ -17,6 +17,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             name: DataTypes.STRING,
             user_id: DataTypes.STRING,
+            genai_type_id: DataTypes.STRING,
+            category: DataTypes.STRING,
             start_prompt: DataTypes.STRING(1098765),
             end_prompt: DataTypes.STRING(1098765),
             tone: DataTypes.ARRAY(DataTypes.STRING),
