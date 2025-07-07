@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             entity: DataTypes.STRING,
+            sub_entity: DataTypes.STRING,
             datatype: DataTypes.STRING,
             boost_value: DataTypes.FLOAT,
             description: DataTypes.STRING,
