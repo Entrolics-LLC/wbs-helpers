@@ -21,7 +21,17 @@ module.exports = (sequelize, DataTypes, schema) => {
             history_id: DataTypes.ARRAY(DataTypes.STRING(1098765)),
             description: DataTypes.STRING(1098765),
             eval_response: DataTypes.JSONB,
-            is_deleted: DataTypes.BOOLEAN,
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            row_count: DataTypes.INTEGER,
+            mean_score: {
+                type: DataTypes.DECIMAL(16, 14),
+            },
+            std_score: {
+                type: DataTypes.DECIMAL(16, 14),
+            },
             created_at: {
                 type: DataTypes.DATE
             },
@@ -39,3 +49,4 @@ module.exports = (sequelize, DataTypes, schema) => {
         })
     return Evaluation;
 };
+
