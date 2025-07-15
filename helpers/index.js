@@ -845,15 +845,12 @@ const trimWhitespaceEnv = (input) => {
 }
 
 // Helper function to dynamically prefix environment variables
-const getEnvWithPrefix = (instance, envVar) => {
-    const inst = trimWhitespaceEnv(instance);
-    const varName = trimWhitespaceEnv(envVar);
+const getEnvWithPrefix = (instance, key) => {
+    if (typeof key !== 'string') return '';
 
-    if (!varName) return undefined;
-
-    return inst ? `${inst}_${varName}` : varName;
-};
-
+    const trimmedInstance = instance?.trim();
+    return trimmedInstance ? `${trimmedInstance}_${key}` : key;
+}
 
 module.exports = {
     runQuery,
