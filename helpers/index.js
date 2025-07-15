@@ -846,22 +846,12 @@ const trimWhitespaceEnv = (input) => {
 
 // Helper function to dynamically prefix environment variables
 const getEnvWithPrefix = (instance, envVar) => {
-    const inst = instance || '';
-    const varName = typeof envVar === 'string' ? envVar : '';
+    const inst = trimWhitespaceEnv(instance);
+    const varName = trimWhitespaceEnv(envVar);
 
-    if (!varName) {
-        console.log('*******', undefined);
-        return undefined;
-    }
+    if (!varName) return undefined;
 
-    const prefixedKey = inst ? `${inst}_${varName}` : varName;
-
-    const envWithPrefix =
-        trimWhitespaceEnv(process.env?.[prefixedKey]) ||
-        trimWhitespaceEnv(process.env?.[varName]);
-
-    console.log('====>', envWithPrefix);
-    return envWithPrefix;
+    return inst ? `${inst}_${varName}` : varName;
 };
 
 
