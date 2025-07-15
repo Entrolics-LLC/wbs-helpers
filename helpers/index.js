@@ -844,14 +844,6 @@ const trimWhitespaceEnv = (input) => {
     else return input;
 }
 
-// Helper function to dynamically prefix environment variables
-const getEnvWithPrefix = (instance, key) => {
-    if (typeof key !== 'string') return '';
-
-    const trimmedInstance = instance?.trim();
-    return trimmedInstance ? `${trimmedInstance}_${key}` : key;
-}
-
 module.exports = {
     runQuery,
     parseVideoData,
@@ -890,6 +882,5 @@ module.exports = {
     validateFields,
     getAuthS3Url,
     runQueryWithReplacements,
-    trimWhitespaceEnv,
-    getEnvWithPrefix
+    trimWhitespaceEnv
 }
