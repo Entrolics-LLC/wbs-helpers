@@ -844,6 +844,27 @@ const trimWhitespaceEnv = (input) => {
     else return input;
 }
 
+// Helper function to dynamically prefix environment variables
+const getEnvWithPrefix = (instance, envVar) => {
+    const inst = instance || '';
+    const varName = typeof envVar === 'string' ? envVar : '';
+
+    if (!varName) {
+        console.log('*******', undefined);
+        return undefined;
+    }
+
+    const prefixedKey = inst ? `${inst}_${varName}` : varName;
+
+    const envWithPrefix =
+        trimWhitespaceEnv(process.env?.[prefixedKey]) ||
+        trimWhitespaceEnv(process.env?.[varName]);
+
+    console.log('====>', envWithPrefix);
+    return envWithPrefix;
+};
+
+
 module.exports = {
     runQuery,
     parseVideoData,
@@ -882,5 +903,6 @@ module.exports = {
     validateFields,
     getAuthS3Url,
     runQueryWithReplacements,
-    trimWhitespaceEnv
+    trimWhitespaceEnv,
+    getEnvWithPrefix
 }
