@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             history_id: DataTypes.ARRAY(DataTypes.STRING(1098765)),
             description: DataTypes.STRING(1098765),
             eval_response: DataTypes.JSONB,
+            is_uploaded: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
