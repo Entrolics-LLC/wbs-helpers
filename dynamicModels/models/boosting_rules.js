@@ -16,13 +16,17 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             entity: DataTypes.STRING,
-            sub_entity: DataTypes.STRING(8192),
+            sub_entity: DataTypes.ARRAY(DataTypes.STRING),
             datatype: DataTypes.STRING,
             boost_value: DataTypes.FLOAT,
             description: DataTypes.STRING,
             tooltip: DataTypes.STRING,
             filter_name: DataTypes.STRING,
             created_by: DataTypes.STRING,
+            enabled: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_organization: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
