@@ -33,6 +33,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             version_number: DataTypes.INTEGER,
             image_size: DataTypes.STRING,
             additional_notes: DataTypes.STRING(89192),
+            target_audience: DataTypes.TEXT,
             created_at: {
                 type: DataTypes.DATE
             },
