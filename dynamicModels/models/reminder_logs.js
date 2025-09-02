@@ -32,6 +32,11 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false,
                 defaultValue: 'pending'
             },
+            type:{
+                type: DataTypes.STRING,
+                allowNull: false,
+                defaultValue: 'subscription_reminder'
+            },
             sent_at: {
                 type: DataTypes.DATE,
                 allowNull: true
