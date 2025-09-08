@@ -16,12 +16,8 @@ const init = (cloudConfig = config, schema = null, alter = false) => {
 
         console.log('connecting...')
         db.authenticate()
-        // db.sync()
-        db.sync({ alter })
-        // db.sync({ force: true })
-
+        
         console.log('Connection has been established successfully.')
-
 
         db.createSchema('search_admin')
             .then(() => console.log('****'))
@@ -39,8 +35,14 @@ const init = (cloudConfig = config, schema = null, alter = false) => {
                 addDynamicModels(db, schema)
             }
             catch (e) {
+                console.log('Error adding dynamic models:', e)
             }
         }
+        
+        // Sync the database after all models have been loaded
+        // db.sync()
+        db.sync({ alter })
+        // db.sync({ force: true })
 
         return db
     }
@@ -57,10 +59,7 @@ const initPromise = (cloudConfig = config, schema, alter = false) => {
 
         console.log('connecting...')
         db.authenticate()
-        // db.sync()
-        db.sync({ alter })
-        // db.sync({ force: true })
-
+        
         console.log('Connection has been established successfully.')
 
         try {
@@ -70,9 +69,15 @@ const initPromise = (cloudConfig = config, schema, alter = false) => {
                 })
                 .catch((e) => console.log('error'))
             addDynamicModels(db, schema)
+            
+            // Sync the database after all models have been loaded
+            // db.sync()
+            db.sync({ alter })
+            // db.sync({ force: true })
         }
         catch (e) {
-            reject(null)
+            console.log('Error in initPromise:', e)
+            return null
         }
 
         return db
