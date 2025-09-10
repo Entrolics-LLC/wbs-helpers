@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             feedback: DataTypes.STRING(1098765),
             rating: DataTypes.INTEGER,
             file_ids: DataTypes.ARRAY(DataTypes.STRING),
+            shared_with: DataTypes.ARRAY(DataTypes.STRING),
             project_id: DataTypes.STRING,
             di_search: {
                 type: DataTypes.BOOLEAN,
