@@ -55,6 +55,15 @@ module.exports = (sequelize, DataTypes, schema) => {
         precision_k10: {
             type: DataTypes.DECIMAL(16, 14)
         },
+        success_k3 : {
+            type: DataTypes.DECIMAL(10, 4)
+        },
+        success_k5 : {
+            type: DataTypes.DECIMAL(10, 4)
+        },
+        success_k10 : {
+            type: DataTypes.DECIMAL(10, 4)
+        },
         created_at: {
             type: DataTypes.DATE,
             allowNull: false

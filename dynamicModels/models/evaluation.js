@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             eval_type: DataTypes.STRING(1098765),
             history_id: DataTypes.ARRAY(DataTypes.STRING(1098765)),
             description: DataTypes.STRING(1098765),
+            status: DataTypes.STRING(1098765),
             eval_response: DataTypes.JSONB,
             is_uploaded: {
                 type: DataTypes.BOOLEAN,
