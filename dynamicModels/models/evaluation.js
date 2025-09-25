@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             user_id: DataTypes.STRING(1098765),
+            config_user_id: DataTypes.STRING(1098765),
             evaluation_name: DataTypes.STRING(1098765),
             eval_type: DataTypes.STRING(1098765),
             history_id: DataTypes.ARRAY(DataTypes.STRING(1098765)),
