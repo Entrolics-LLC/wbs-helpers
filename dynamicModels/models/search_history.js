@@ -26,9 +26,14 @@ module.exports = (sequelize, DataTypes, schema) => {
             table_name: DataTypes.STRING,
             answer_session_id: DataTypes.STRING,
             total_count: DataTypes.INTEGER,
-            error_response:DataTypes.STRING,
+            error_response: DataTypes.STRING,
             extracted_entities: DataTypes.JSONB,
-            extracted_facets:DataTypes.JSONB,
+            extracted_facets: DataTypes.JSONB,
+            limit_scope: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
+            boosting_rules_id: DataTypes.STRING,
             is_error: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
