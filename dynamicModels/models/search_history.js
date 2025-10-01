@@ -33,7 +33,8 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
-            boosting_rules_id: DataTypes.ARRAY(DataTypes.STRING),
+            boosting_rules: DataTypes.JSONB,
+            metadata_filters: DataTypes.JSONB,
             is_error: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
