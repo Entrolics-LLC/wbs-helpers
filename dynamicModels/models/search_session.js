@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             file_ids: DataTypes.ARRAY(DataTypes.STRING),
             shared_with: DataTypes.ARRAY(DataTypes.STRING),
             project_id: DataTypes.STRING,
+            vertexai_session_id: DataTypes.STRING,
             di_search: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
