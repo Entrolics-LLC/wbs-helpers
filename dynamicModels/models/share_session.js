@@ -21,7 +21,9 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             user_id: DataTypes.STRING(255),
+            session_id: DataTypes.STRING(255),
             url: DataTypes.STRING(1048796),
+
             created_at: {
                 type: DataTypes.DATE
             }
