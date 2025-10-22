@@ -85,6 +85,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            web_search: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             home_view: DataTypes.STRING,
         },
         {
