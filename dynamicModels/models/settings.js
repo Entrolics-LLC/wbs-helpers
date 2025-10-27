@@ -75,6 +75,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             relevance_threshold: DataTypes.STRING,
             tags: DataTypes.ARRAY(DataTypes.STRING),
             preferred_org: DataTypes.STRING,
+            organization_id : DataTypes.STRING,
+            department_id  : DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
             },

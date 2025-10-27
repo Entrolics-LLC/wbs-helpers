@@ -2,13 +2,13 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes, schema) => {
-    class Organization extends Model {
+    class Department extends Model {
         static associate(models) {
             // define association here (if needed)
         }
     }
 
-    Organization.init(
+    Department.init(
         {
             id: {
                 type: DataTypes.STRING,
@@ -19,8 +19,9 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.STRING(255),
                 allowNull: false
             },
-            owner_id: {
-                type: DataTypes.STRING
+            organization_id: {
+                type: DataTypes.STRING,
+                allowNull: false
             },
             created_at: {
                 type: DataTypes.DATE,
@@ -39,13 +40,13 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_organizations`,
-            tableName: 'organizations',
+            modelName: `${schema}_departments`,
+            tableName: 'departments',
             schema,
             createdAt: false,
             updatedAt: false
         }
     );
 
-    return Organization;
+    return Department;
 };

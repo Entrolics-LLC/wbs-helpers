@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             parent_domain: DataTypes.STRING,
             created_by: DataTypes.STRING,
             guest_id: DataTypes.STRING,
+            organization_id : DataTypes.STRING,
             is_deleted: DataTypes.BOOLEAN,
             created_at: {
                 type: DataTypes.DATE

@@ -2,25 +2,32 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes, schema) => {
-    class Organization extends Model {
+    class Role extends Model {
         static associate(models) {
             // define association here (if needed)
         }
     }
 
-    Organization.init(
+    Role.init(
         {
             id: {
                 type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
             },
+            organization_id: {
+                type: DataTypes.STRING
+            },
             name: {
-                type: DataTypes.STRING(255),
+                type: DataTypes.STRING(100),
                 allowNull: false
             },
-            owner_id: {
-                type: DataTypes.STRING
+            description: {
+                type: DataTypes.TEXT
+            },
+            is_system_role: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
             },
             created_at: {
                 type: DataTypes.DATE,
@@ -39,13 +46,19 @@ module.exports = (sequelize, DataTypes, schema) => {
         },
         {
             sequelize,
-            modelName: `${schema}_organizations`,
-            tableName: 'organizations',
+            modelName: `${schema}_roles`,
+            tableName: 'roles',
             schema,
             createdAt: false,
-            updatedAt: false
+            updatedAt: false,
+            indexes: [
+                {
+                    unique: true,
+                    fields: ['organization_id', 'name']
+                }
+            ]
         }
     );
 
-    return Organization;
+    return Role;
 };

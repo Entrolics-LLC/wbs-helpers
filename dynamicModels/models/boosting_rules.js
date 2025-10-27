@@ -20,6 +20,8 @@ module.exports = (sequelize, DataTypes, schema) => {
             datatype: DataTypes.STRING,
             boost_value: DataTypes.FLOAT,
             description: DataTypes.STRING,
+            organization_id: DataTypes.STRING,
+            department_id: DataTypes.STRING,
             tooltip: DataTypes.STRING,
             filter_name: DataTypes.STRING,
             created_by: DataTypes.STRING,
