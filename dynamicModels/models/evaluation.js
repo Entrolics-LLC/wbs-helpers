@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             description: DataTypes.STRING(1098765),
             status: DataTypes.STRING(1098765),
             eval_response: DataTypes.JSONB,
-            threshold: DataTypes.INTEGER,
+            threshold: DataTypes.FLOAT,
             is_uploaded: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
