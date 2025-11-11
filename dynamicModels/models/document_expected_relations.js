@@ -18,17 +18,9 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
-            document_entry_id: {
-                type: DataTypes.STRING(36),
-                allowNull: false
-            },
-            expected_entry_id: {
-                type: DataTypes.STRING(36),
-                allowNull: false
-            },
-            similarity_score: {
-                type: DataTypes.FLOAT
-            },
+            document_entry_id: DataTypes.STRING(36),
+            expected_entry_id: DataTypes.STRING(36),
+            similarity_score: DataTypes.FLOAT,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false

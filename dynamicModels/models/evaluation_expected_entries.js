@@ -15,19 +15,11 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
-            evaluation_id: {
-                type: DataTypes.STRING(36)
-            },
-            history_id: {
-                type: DataTypes.STRING(36)
-            },
-            expected_text: {
-                type: DataTypes.TEXT,
-                allowNull: false
-            },
-            expected_embedding: {
-                type: DataTypes.VECTORS(1536) // same dimensionality as others
-            },
+            evaluation_id: DataTypes.STRING(36),
+            history_id: DataTypes.STRING(36),
+            expected_chunk_index: DataTypes.INTEGER,
+            expected_text: DataTypes.TEXT,
+            expected_embedding: DataTypes.VECTORS,// same dimensionality as others,
             is_deleted: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
