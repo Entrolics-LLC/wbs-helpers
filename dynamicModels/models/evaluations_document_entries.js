@@ -16,15 +16,25 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             evaluations_entries_id: DataTypes.STRING(100),
+            evaluation_id: DataTypes.STRING(100),
+            history_id: DataTypes.STRING(100),
             question: DataTypes.TEXT,
             response: DataTypes.TEXT,
             refrence_text: DataTypes.TEXT,
+            reference_embedding: DataTypes.VECTORS(1536),
             relavent_text: DataTypes.TEXT,
             document_name: DataTypes.STRING(255),
             document_score: DataTypes.NUMERIC,
             feedback_rating: DataTypes.INTEGER,
-            feedback_comment:DataTypes.TEXT,
+            feedback_comment: DataTypes.TEXT,
+            is_deleted: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             created_at: {
+                type: DataTypes.DATE
+            },
+            updated_at: {
                 type: DataTypes.DATE
             },
         },
