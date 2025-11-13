@@ -79,6 +79,10 @@ module.exports = (sequelize, DataTypes, schema) => {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
             },
+            inline_citation: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             created_at: {
                 type: DataTypes.DATE
             },
