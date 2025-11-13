@@ -75,6 +75,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             relevance_threshold: DataTypes.STRING,
             tags: DataTypes.ARRAY(DataTypes.STRING),
             preferred_org: DataTypes.STRING,
+            is_customize: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             created_at: {
                 type: DataTypes.DATE
             },
