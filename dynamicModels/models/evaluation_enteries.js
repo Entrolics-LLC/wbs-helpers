@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             type: DataTypes.STRING,
             allowNull: false
         },
+        search_history_id: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         score: {
             type: DataTypes.DECIMAL(3, 1),
             allowNull: false
