@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             status: DataTypes.STRING(1098765),
             eval_response: DataTypes.JSONB,
             threshold: DataTypes.FLOAT,
-            domain: DataTypes.ARRAY(DataTypes.STRING),
+            domains: DataTypes.ARRAY(DataTypes.STRING),
             is_uploaded: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
