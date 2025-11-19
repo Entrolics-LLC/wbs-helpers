@@ -14,60 +14,30 @@ module.exports = (sequelize, DataTypes, schema) => {
             primaryKey: true,
             allowNull: false
         },
-        evaluation_id: {
-            type: DataTypes.STRING
+        evaluation_id: DataTypes.STRING,
+        history_id: DataTypes.STRING,
+        search_history_id: DataTypes.STRING,
+        score: DataTypes.DECIMAL(3, 1),
+        explanation: DataTypes.TEXT,
+        ndcg_k3: DataTypes.DECIMAL(16, 14),
+        recall_k3: DataTypes.DECIMAL(3, 1),
+        precision_k3: DataTypes.DECIMAL(16, 14),
+        ndcg_k5: DataTypes.DECIMAL(16, 14),
+        recall_k5: DataTypes.DECIMAL(3, 1),
+        precision_k5: DataTypes.DECIMAL(16, 14),
+        ndcg_k10: DataTypes.DECIMAL(16, 14),
+        recall_k10: DataTypes.DECIMAL(3, 1),
+        precision_k10: DataTypes.DECIMAL(16, 14),
+        success_k3: DataTypes.DECIMAL(10, 4),
+        success_k5: DataTypes.DECIMAL(10, 4),
+        success_k10: DataTypes.DECIMAL(10, 4),
+        limit_scope: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
         },
-        history_id: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        search_history_id: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        score: {
-            type: DataTypes.DECIMAL(3, 1),
-            allowNull: false
-        },
-        explanation: {
-            type: DataTypes.TEXT
-        },
-        ndcg_k3: {
-            type: DataTypes.DECIMAL(16, 14)
-        },
-        recall_k3: {
-            type: DataTypes.DECIMAL(3, 1)
-        },
-        precision_k3: {
-            type: DataTypes.DECIMAL(16, 14)
-        },
-        ndcg_k5: {
-            type: DataTypes.DECIMAL(16, 14)
-        },
-        recall_k5: {
-            type: DataTypes.DECIMAL(3, 1)
-        },
-        precision_k5: {
-            type: DataTypes.DECIMAL(16, 14)
-        },
-        ndcg_k10: {
-            type: DataTypes.DECIMAL(16, 14)
-        },
-        recall_k10: {
-            type: DataTypes.DECIMAL(3, 1)
-        },
-        precision_k10: {
-            type: DataTypes.DECIMAL(16, 14)
-        },
-        success_k3 : {
-            type: DataTypes.DECIMAL(10, 4)
-        },
-        success_k5 : {
-            type: DataTypes.DECIMAL(10, 4)
-        },
-        success_k10 : {
-            type: DataTypes.DECIMAL(10, 4)
-        },
+        boosting_rules: DataTypes.JSONB,
+        metadata_filters: DataTypes.JSONB,
+        filter_domains: DataTypes.ARRAY(DataTypes.STRING),
         created_at: {
             type: DataTypes.DATE,
             allowNull: false
