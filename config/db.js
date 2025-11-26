@@ -10,48 +10,52 @@ const logging = (msg) => {
     }
 }
 
-const init = (cloudConfig = config, schema = null, alter = false) => {
+const init = (cloudConfig = config, schema = null, alter) => {
     try {
-        let db = new Sequelize({ ...cloudConfig, ssl: true, pool: { maxConnections: 50, maxIdleTime: 30 }, language: 'en', logging })
+        // default to false if alter is undefined
+        const shouldAlter = alter !== undefined ? alter : false;
 
-        console.log('connecting...')
-        db.authenticate()
-        
-        console.log('Connection has been established successfully.')
+        const db = new Sequelize({
+            ...cloudConfig,
+            ssl: true,
+            pool: { maxConnections: 50, maxIdleTime: 30 },
+            language: 'en',
+            logging
+        });
+
+        console.log('connecting...');
+        db.authenticate();
+        console.log('Connection has been established successfully.');
 
         db.createSchema('search_admin')
             .then(() => console.log('****'))
-            .catch((e) => console.log('error'))
+            .catch((e) => console.log('error creating search_admin schema', e));
 
-        addModels(db)
+        addModels(db);
 
         if (schema) {
-            console.log('schema')
-            try {
-                db.createSchema(schema)
-                    .then(() => console.log('new schema'))
-                    .catch((e) => console.log('error'))
+            console.log('schema');
+            db.createSchema(schema)
+                .then(() => console.log('new schema created'))
+                .catch((e) => console.log('error creating schema', e));
 
-                addDynamicModels(db, schema)
-            }
-            catch (e) {
-                console.log('Error adding dynamic models:', e)
+            try {
+                addDynamicModels(db, schema);
+            } catch (e) {
+                console.log('Error adding dynamic models:', e);
             }
         }
-        
+
         // Sync the database after all models have been loaded
-        // db.sync()
-        db.sync({ alter })
-        // db.sync({ force: true })
+        db.sync({ alter: shouldAlter });
 
-        return db
+        return db;
+    } catch (error) {
+        console.log('Unable to connect to the database:', error);
+        return null;
     }
-    catch (error) {
-        console.log('Unable to connect to the database:', error)
+};
 
-        return null
-    }
-}
 
 const initPromise = (cloudConfig = config, schema, alter = false) => {
     try {
@@ -59,7 +63,7 @@ const initPromise = (cloudConfig = config, schema, alter = false) => {
 
         console.log('connecting...')
         db.authenticate()
-        
+
         console.log('Connection has been established successfully.')
 
         try {
@@ -69,7 +73,7 @@ const initPromise = (cloudConfig = config, schema, alter = false) => {
                 })
                 .catch((e) => console.log('error'))
             addDynamicModels(db, schema)
-            
+
             // Sync the database after all models have been loaded
             // db.sync()
             db.sync({ alter })
@@ -89,16 +93,6 @@ const initPromise = (cloudConfig = config, schema, alter = false) => {
     }
 }
 
-// const createDB = () => {
-//     exec('cd node_modules && cd context-helpers && npm run createDB', (error, stdout, stderr) => {
-//         console.log('stdout: ' + stdout)
-//         console.log('stderr: ' + stderr)
-//         if (error !== null) {
-//             console.log('exec error: ' + error)
-//         }
-//     })
-// }
-
 const migrateDB = () => {
     try {
         let migration = process.env.NODE_ENV === 'production' ? 'createMigrationProduction' : 'createMigration'
@@ -114,18 +108,6 @@ const migrateDB = () => {
         console.log('***')
     }
 }
-
-// var sequelize = new Sequelize(config.database, config.username, config.password, {
-//     host: config.host,
-//     port: 5432,
-//     maxConcurrentQueries: 100,
-//     dialect: 'postgres',
-//     dialectOptions: {
-//         ssl: true
-//     },
-//     pool: { maxConnections: 5, maxIdleTime: 30 },
-//     language: 'en'
-// })
 
 module.exports = {
     init,
