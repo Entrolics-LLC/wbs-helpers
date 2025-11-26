@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 primaryKey: true,
                 allowNull: false
             },
-            group_name: DataTypes.STRING,
+            name: DataTypes.STRING,
             created_by: DataTypes.STRING,
             updated_by: DataTypes.STRING,
             created_at: {
