@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes, schema) => {
     }
     Group.init(
         {
-            group_id: {
+            id: {
                 type: DataTypes.STRING,
                 primaryKey: true,
                 allowNull: false
