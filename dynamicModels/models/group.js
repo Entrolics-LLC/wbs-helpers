@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             group_name: DataTypes.STRING,
-            user_id: DataTypes.STRING,
+            created_by: DataTypes.STRING,
+            updated_by: DataTypes.STRING,
             created_at: {
                 type: DataTypes.DATE
             },
