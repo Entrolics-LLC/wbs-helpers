@@ -99,6 +99,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             },
             home_view: DataTypes.STRING,
             group_id: DataTypes.STRING,
+            group_assign_by: DataTypes.STRING,
         },
         {
             sequelize,
