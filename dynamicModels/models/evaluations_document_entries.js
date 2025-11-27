@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             document_name: DataTypes.STRING(255),
             document_score: DataTypes.NUMERIC,
             feedback_rating: DataTypes.INTEGER,
+            retrieval_rank: DataTypes.INTEGER,
             success_k3: DataTypes.INTEGER,
             success_k5: DataTypes.INTEGER,
             success_k10: DataTypes.INTEGER,
