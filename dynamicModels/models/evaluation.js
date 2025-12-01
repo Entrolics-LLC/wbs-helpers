@@ -25,6 +25,10 @@ module.exports = (sequelize, DataTypes, schema) => {
             eval_response: DataTypes.JSONB,
             threshold: DataTypes.FLOAT,
             domains: DataTypes.ARRAY(DataTypes.STRING),
+            summary_eval_enabled : {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
+            },
             is_uploaded: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false
