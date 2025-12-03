@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes, schema) => {
             snippets: DataTypes.JSONB,
             struct_data: DataTypes.JSONB,
             meta: DataTypes.JSONB,
-            retrieval_rank: DataTypes.NUMBER,
+            retrieval_rank: DataTypes.INTEGER,
             relevant_text: DataTypes.STRING(1098765),
             created_at: {
                 type: DataTypes.DATE
