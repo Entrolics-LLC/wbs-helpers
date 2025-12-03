@@ -39,6 +39,7 @@ module.exports = (sequelize, DataTypes, schema) => {
         success_k10: DataTypes.DECIMAL(10, 4),
         feedback_rating: DataTypes.INTEGER,
         feedback_comment: DataTypes.TEXT,
+        ground_truth_summary : DataTypes.TEXT,
         limit_scope: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
