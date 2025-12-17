@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes, schema) => {
                 allowNull: false
             },
             name: DataTypes.STRING,
+            description: DataTypes.STRING(1098765),
             created_by: DataTypes.STRING,
             updated_by: DataTypes.STRING,
             created_at: {
