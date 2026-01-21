@@ -2,104 +2,104 @@ const { v4: uuidv4 } = require('uuid')
 const axios = require('axios')
 const Fuse = require('fuse.js')
 const _ = require('lodash')
-const scheduler = require('@google-cloud/scheduler')
-const { DocumentProcessorServiceClient } = require('@google-cloud/documentai').v1beta3
-const { WorkflowsClient, ExecutionsClient } = require('@google-cloud/workflows')
-const Vision = require('@google-cloud/vision')
+// const scheduler = require('@google-cloud/scheduler')
+// const { DocumentProcessorServiceClient } = require('@google-cloud/documentai').v1beta3
+// const { WorkflowsClient, ExecutionsClient } = require('@google-cloud/workflows')
+// const Vision = require('@google-cloud/vision')
 const moment = require('moment')
 var jwt = require('jwt-simple')
 const isNull = require('./isNull')
 const codes = require('./codes.json')
 const { runQuery, runQueryWithReplacements } = require('./postgresQueries')
 
-const getGoogleFlow = (name, service_key) => (
-    new Promise(async (resolve, reject) => {
-        try {
-            const workFlowClient = new WorkflowsClient({
-                projectId: service_key.project_id,
-                credentials: service_key
-            })
-            const [response] = await workFlowClient.getWorkflow({ name })
-            resolve(response)
-        }
-        catch (e) {
-            reject(e)
-        }
-    })
-)
+// const getGoogleFlow = (name, service_key) => (
+//     new Promise(async (resolve, reject) => {
+//         try {
+//             const workFlowClient = new WorkflowsClient({
+//                 projectId: service_key.project_id,
+//                 credentials: service_key
+//             })
+//             const [response] = await workFlowClient.getWorkflow({ name })
+//             resolve(response)
+//         }
+//         catch (e) {
+//             reject(e)
+//         }
+//     })
+// )
 
-const getGoogleFlowExecutions = (parent, service_key) => (
+// const getGoogleFlowExecutions = (parent, service_key) => (
 
-    new Promise(async (resolve, reject) => {
-        try {
-            const flowExecutionClient = new ExecutionsClient({
-                projectId: service_key.project_id,
-                credentials: service_key
-            })
-            const [response] = await flowExecutionClient.listExecutions({ parent, view: 'FULL' })
-            resolve(response)
-        }
-        catch (e) {
-            reject(e)
-        }
-    })
-)
+//     new Promise(async (resolve, reject) => {
+//         try {
+//             const flowExecutionClient = new ExecutionsClient({
+//                 projectId: service_key.project_id,
+//                 credentials: service_key
+//             })
+//             const [response] = await flowExecutionClient.listExecutions({ parent, view: 'FULL' })
+//             resolve(response)
+//         }
+//         catch (e) {
+//             reject(e)
+//         }
+//     })
+// )
 
-const imageTextDetection = (destination, service_key) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            const visionClient = new Vision.ImageAnnotatorClient({
-                projectId: service_key.project_id,
-                credentials: service_key
-            })
-            const [result] = await visionClient.textDetection(destination)
-            resolve(result)
-        }
-        catch (e) {
-            reject(e)
-        }
-    })
-}
+// const imageTextDetection = (destination, service_key) => {
+//     return new Promise(async (resolve, reject) => {
+//         try {
+//             const visionClient = new Vision.ImageAnnotatorClient({
+//                 projectId: service_key.project_id,
+//                 credentials: service_key
+//             })
+//             const [result] = await visionClient.textDetection(destination)
+//             resolve(result)
+//         }
+//         catch (e) {
+//             reject(e)
+//         }
+//     })
+// }
 
-const getDocumentAIProcessorsList = (service_key, projectId) => {
-    //https://googleapis.dev/nodejs/documentai/latest/v1beta3.DocumentProcessorServiceClient.html#listProcessors
-    return new Promise(async (resolve, reject) => {
-        try {
-            const docAIParent = `projects/${projectId}/locations/us`
-            const DocAIclient = new DocumentProcessorServiceClient({
-                projectId,
-                credentials: service_key
-            })
-            let d = await DocAIclient.listProcessors({ parent: docAIParent })
-            let noNulls = d?.filter(Boolean)?.flat()
+// const getDocumentAIProcessorsList = (service_key, projectId) => {
+//     //https://googleapis.dev/nodejs/documentai/latest/v1beta3.DocumentProcessorServiceClient.html#listProcessors
+//     return new Promise(async (resolve, reject) => {
+//         try {
+//             const docAIParent = `projects/${projectId}/locations/us`
+//             const DocAIclient = new DocumentProcessorServiceClient({
+//                 projectId,
+//                 credentials: service_key
+//             })
+//             let d = await DocAIclient.listProcessors({ parent: docAIParent })
+//             let noNulls = d?.filter(Boolean)?.flat()
 
-            let allProcessors = noNulls?.map((d) => {
-                let processorName = d?.name
-                let processorID = processorName?.slice(processorName?.lastIndexOf('/') + 1, processorName?.length)
-                let displayName = d?.displayName
-                return { id: processorID, displayName, type: d?.type, state: d?.state }
-            })?.filter(d => Boolean(d?.id && d?.state == 'ENABLED'))
-            resolve(allProcessors)
-        }
-        catch (e) {
-            reject(e)
-        }
-    })
-}
+//             let allProcessors = noNulls?.map((d) => {
+//                 let processorName = d?.name
+//                 let processorID = processorName?.slice(processorName?.lastIndexOf('/') + 1, processorName?.length)
+//                 let displayName = d?.displayName
+//                 return { id: processorID, displayName, type: d?.type, state: d?.state }
+//             })?.filter(d => Boolean(d?.id && d?.state == 'ENABLED'))
+//             resolve(allProcessors)
+//         }
+//         catch (e) {
+//             reject(e)
+//         }
+//     })
+// }
 
-const doesDocAIProcessorExist = (processorId, projectId, service_key) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let d = await getDocumentAIProcessorsList(service_key, projectId)
-            let allProcessorIds = d?.map(d => d?.id)
-            let isExisting = allProcessorIds?.indexOf(processorId) > -1
-            resolve(isExisting)
-        }
-        catch (e) {
-            reject(e)
-        }
-    })
-}
+// const doesDocAIProcessorExist = (processorId, projectId, service_key) => {
+//     return new Promise(async (resolve, reject) => {
+//         try {
+//             let d = await getDocumentAIProcessorsList(service_key, projectId)
+//             let allProcessorIds = d?.map(d => d?.id)
+//             let isExisting = allProcessorIds?.indexOf(processorId) > -1
+//             resolve(isExisting)
+//         }
+//         catch (e) {
+//             reject(e)
+//         }
+//     })
+// }
 
 const arrayIntoBigqueryArray = (array) => ( //Convert JS Array into Bigquery Array, Use only for array of strings.
     Boolean(Array.isArray(array) && array?.length) ?
@@ -665,41 +665,41 @@ const COMPLETED = 'COMPLETED'
 const PROCESSING = 'PROCESSING'
 const FAILED = 'FAILED'
 
-const createSchedule = async ({ uri, method = 'POST', schedule = '*/5 * * * *', id }, service_key) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            const client = new scheduler.CloudSchedulerClient({
-                projectId: service_key.project_id,
-                credentials: service_key
-            })
-            const parent = client.locationPath(projectId, 'us-central1')
-            const job = {
-                httpTarget: {
-                    uri: uri,
-                    httpMethod: method,
+// const createSchedule = async ({ uri, method = 'POST', schedule = '*/5 * * * *', id }, service_key) => {
+//     return new Promise(async (resolve, reject) => {
+//         try {
+//             const client = new scheduler.CloudSchedulerClient({
+//                 projectId: service_key.project_id,
+//                 credentials: service_key
+//             })
+//             const parent = client.locationPath(projectId, 'us-central1')
+//             const job = {
+//                 httpTarget: {
+//                     uri: uri,
+//                     httpMethod: method,
 
-                    ...id ? { body: Buffer.from(`${id}`) } : {}
+//                     ...id ? { body: Buffer.from(`${id}`) } : {}
 
-                },
-                schedule: schedule,
-                timeZone: 'America/Los_Angeles'
-            }
+//                 },
+//                 schedule: schedule,
+//                 timeZone: 'America/Los_Angeles'
+//             }
 
-            const request = {
-                parent: parent,
-                job: job
-            }
+//             const request = {
+//                 parent: parent,
+//                 job: job
+//             }
 
-            const [response] = await client.createJob(request)
-            console.log('Created job: ', response.name)
-            resolve(response)
-        }
-        catch (e) {
-            console.log('er in catch==>', e)
-            reject(e)
-        }
-    })
-}
+//             const [response] = await client.createJob(request)
+//             console.log('Created job: ', response.name)
+//             resolve(response)
+//         }
+//         catch (e) {
+//             console.log('er in catch==>', e)
+//             reject(e)
+//         }
+//     })
+// }
 
 const setProcessingStatus = ({ status, id, additonalKeys }, db) => {
     let sqlQuery = `UPDATE artifacts SET updated_at=NOW(), importing_status='${PROCESSING}' ${additonalKeys || ''} WHERE id='${id}'`
@@ -852,9 +852,9 @@ module.exports = {
     getProjectFlow,
     arrayIntoBigqueryArray,
     arrayIntoPostgresqlArray,
-    imageTextDetection,
-    getDocumentAIProcessorsList,
-    createSchedule,
+    // imageTextDetection,
+    // getDocumentAIProcessorsList,
+    // createSchedule,
     setProcessingStatus,
     getUniqueArrayOfObjects,
     getAuthUrl,
@@ -870,9 +870,9 @@ module.exports = {
     dataToNeo4jloop,
     dlpFunction,
     graphSchemHelper,
-    doesDocAIProcessorExist,
-    getGoogleFlow,
-    getGoogleFlowExecutions,
+    // doesDocAIProcessorExist,
+    // getGoogleFlow,
+    // getGoogleFlowExecutions,
     folderRecursive,
     apiResponse,
     successFalse,
